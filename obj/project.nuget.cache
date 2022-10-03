@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ejdjBKEjvr1w+vEwqWwf5CymXt6AlD8IWeqoiztcL4tkO9HZ6RM53l1UfesURJS0oNbSl0N+sWUABk83OxZYKw==",
+  "dgSpecHash": "kQlIzTmFZI5ljVnb+bFeTYW7siR08OFhiP7bMAi/lpANhbiz2mRztTCgDcsTINs6awj8h3BeUGI+rf/v2ktkSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\Compoze.csproj",
   "expectedPackageFiles": [
@@ -91,7 +91,11 @@
     "C:\\Users\\Chris\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\Chris\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\Chris\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
-    "C:\\Users\\Chris\\.nuget\\packages\\websocket4net\\0.15.1\\websocket4net.0.15.1.nupkg.sha512"
+    "C:\\Users\\Chris\\.nuget\\packages\\websocket4net\\0.15.1\\websocket4net.0.15.1.nupkg.sha512",
+    "C:\\Users\\Chris\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Chris\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\Chris\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Chris\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
