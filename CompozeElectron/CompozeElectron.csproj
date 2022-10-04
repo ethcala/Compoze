@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="Auth0.AspNetCore.Authentication" Version="1.0.4" />
     <PackageReference Include="electronnet.api" Version="13.5.1" />
   </ItemGroup>
   <ItemGroup>

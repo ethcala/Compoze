@@ -32,3 +32,11 @@ C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64
 C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.pdb
 C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.genruntimeconfig.cache
 C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\ref\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Auth0.AspNetCore.Authentication.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Logging.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\System.IdentityModel.Tokens.Jwt.dll
