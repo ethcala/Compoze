@@ -1,0 +1,39 @@
+$main-blue: rgb(188, 230, 255);
+$main-purple: rgb(218, 202, 255);
+
+$bg-light: rgb(241, 241, 241);
+$bg-dark: rgb(28, 7, 102);
+$dark-accent-color: darken($bg-dark, 20%);
+$light-accent-color: rgb(204, 193, 241);
+$bg-l-grey: rgb(241, 241, 241);
+
+$accent-red: rgb(255, 78, 78);
+$accent-green: rgb(170, 236, 170);
+$accent-yellow: rgb(255, 234, 143);
+
+$txt-light: white;
+$txt-l-inactive: rgb(197, 197, 197);
+$txt-l-disabled: rgb(151, 151, 151);
+
+$txt-dark: rgb(29, 1, 1);
+$txt-d-inactive: rgb(139, 139, 139);
+$txt-d-disabled: rgb(202, 202, 202);
+
+// Main colours
+$main-color: $bg-dark;
+$light-main-color: lighten($main-color, 7%);
+
+$secondary-color: $main-blue;
+$dark-second-color: darken($secondary-color, 65%);
+
+.background-darker {
+    background-color: $main-color;
+}
+
+.background-lighter {
+    background-color: lighten($bg-light, 3%);
+}
+
+.background-l-grey {
+    background-color: $bg-l-grey;
+}

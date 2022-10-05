@@ -1,0 +1,76 @@
+@import 'basic/fonts';
+@import 'basic/color';
+
+@mixin code {
+    border-radius: 7px;
+    border: 1px solid;
+    padding: 0 .2rem;
+    p {
+        margin: 0;
+        font-family: $font-code;
+    }
+}
+
+@mixin no-deco {
+    text-decoration: none;
+}
+
+@mixin nav {
+    font-family: $font-basic, Arial, sans-serif;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    padding-left: .5rem;
+    border-bottom: 1px $bg-dark solid;
+    a {
+        @include no-deco();
+    }
+}
+
+@mixin button {
+    font-family: $font-basic, Arial, sans-serif;
+    height: 35px;
+    padding: .5rem;
+    user-select: none;
+    border: 1.5px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    min-width: 120px;
+    font-size: 14pt;
+    a {
+        @include no-deco();
+    }
+}
+
+@mixin tr-larger($width, $height) {
+    width: $width;
+    height: $height;
+    transition: width 1s, height 1s;
+    -webkit-transition: width 1s, height 1s;
+    &:hover {
+        width: $width+10;
+        height: $height+10;
+    }
+}
+
+@mixin button-change($color, $w, $h) {
+    transition: background-color .5s, width .5s, height .5s;
+    -webkit-transition: background-color .5s, width .5s, height .5s;
+    &:hover {
+        background-color: $color;
+        width: $w;
+        height: $h;
+    }
+}
+
+@mixin transition($property, $time) {
+    transition: $property $time;
+    -webkit-transition: $property $time;
+}

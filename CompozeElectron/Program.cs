@@ -1,5 +1,6 @@
 using ElectronNET.API;
 using Auth0.AspNetCore.Authentication;
+using CompozeElectron;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,10 @@ builder.Services
         options.Domain = builder.Configuration["Auth0:Domain"];
         options.ClientId = builder.Configuration["Auth0:ClientId"];
     });
+builder.Services.AddSassCompiler();
+// builder.Services.AddHostedService(sp => new NpmWatchHostedService(
+//                 enabled: sp.GetRequiredService<IWebHostEnvironment>().IsDevelopment(),
+//                 logger: sp.GetRequiredService<ILogger<NpmWatchHostedService>>()));
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

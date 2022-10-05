@@ -10,6 +10,9 @@
 using System;
 using System.Reflection;
 
+[assembly: AspNetCore.SassCompiler.SassCompilerAttribute("C:\\Users\\Chris\\.nuget\\packages\\aspnetcore.sasscompiler\\1.55.0\\build\\..\\runtimes\\w" +
+    "in-x64\\src\\dart.exe", "C:\\Users\\Chris\\.nuget\\packages\\aspnetcore.sasscompiler\\1.55.0\\build\\..\\runtimes\\w" +
+    "in-x64\\src\\sass.snapshot")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("CompozeElectron")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

@@ -1,0 +1,99 @@
+@import 'basic/positions';
+@import 'basic/color';
+
+.divider {
+    height: 1px;
+    background-color: darken($main-color, 50%);
+    padding: 0;
+}
+
+.border-none {
+    border: none;
+}
+
+.border {
+    border: 0 darken($main-color, 20%) solid;
+    padding: $base-padding;
+}
+
+.border-round {
+    border-radius: 5px;
+}
+
+// positions
+.border-all {
+    @extend .border;
+    border-width: 1px;
+}
+
+.border-right {
+    @extend .border;
+    border-right-width: 1px;
+}
+
+.border-left {
+    @extend .border;
+    border-left-width: 1px;
+}
+
+.border-top {
+    @extend .border;
+    border-top-width: 1px;
+}
+
+.border-bottom {
+    @extend .border;
+    border-bottom-width: 1px;
+}
+
+// thick positions
+.border-all-thick {
+    @extend .border;
+    border-width: 2px;
+}
+
+.border-right-thick {
+    @extend .border;
+    border-right-width: 2px;
+}
+
+.border-left-thick {
+    @extend .border;
+    border-left-width: 2px;
+}
+
+.border-top-thick {
+    @extend .border;
+    border-top-width: 2px;
+}
+
+.border-bottom-thick{
+    @extend .border;
+    border-bottom-width: 2px;
+}
+
+// colors & deco
+.border-black {
+    @extend .border;
+    border-color: black;
+}
+
+.border-white {
+    @extend .border;
+    border-color: white;
+}
+
+.border-dark {
+    @extend .border;
+    border-color: $dark-second-color;
+}
+
+.border-dotted {
+    @extend .border;
+    border-style: dotted;
+}
+
+.border-dashed {
+    @extend .border;
+    border-style: dashed;
+}

@@ -1,0 +1,174 @@
+@import 'basic/color';
+@import 'mixins';
+
+.button-dark {
+    @include button;
+    background-color: $bg-dark;
+    color: $txt-light;
+    border-color: black;
+    &:hover {
+        background-color: lighten($bg-dark, 13%);
+        color: white;
+    }
+}
+
+.button-light {
+    @include button;
+    background-color: $bg-light;
+    color: $txt-dark;
+    border-color: $bg-dark;
+    &:hover {
+        background-color: lighten($bg-light, 13%);
+        color: black;
+    }
+}
+
+.button-main {
+    @include button;
+    background-color: $light-accent-color;
+    color: $bg-dark;
+    border-color: $bg-dark;
+    &:hover {
+        background-color: darken($light-accent-color, 10%);
+    }
+}
+
+.button-red {
+    @include button;
+    background-color: $accent-red;
+    color: darken($accent-red, 50%);
+    border-color: darken($accent-red, 50%);
+    &:hover {
+        background-color: lighten($accent-red, 7%);
+        color: darken($accent-red, 50%);
+    }
+}
+
+.button-green {
+    @include button;
+    background-color: $accent-green;
+    color: darken($accent-green, 55%);
+    border-color: darken($accent-green, 55%);
+    &:hover {
+        background-color: lighten($accent-green, 7%);
+        color: darken($accent-green, 45%);
+    }
+}
+
+.button-yellow {
+    @include button;
+    background-color: $accent-yellow;
+    color: darken($accent-yellow, 50%);
+    border-color: darken($accent-yellow, 50%);
+    &:hover {
+        background-color: lighten($accent-yellow, 7%);
+        color: darken($accent-yellow, 45%);
+    }
+}
+
+.sml-button {
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    user-select: none;
+    margin: auto;
+    h1, h2, h3, h4, h5, h6, p {
+        font-family: $font-basic;
+        font-weight: 600;
+        text-align: center;
+    }
+    &:hover {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.x-button {
+    @extend .sml-button;
+    @include button-change(rgb(247, 134, 134), 28px, 28px);
+    background-color: rgb(223, 110, 110);
+    color: rgb(102, 4, 4);
+    border: 1.5px rgb(102, 4, 4) solid;
+    h1, h2, h3, h4, h5, h6, p {
+        color: rgb(102, 4, 4);
+    }
+}
+
+.q-button {
+    @extend .sml-button;
+    @include button-change(rgb(255, 233, 172), 28px, 28px);
+    background-color: rgb(247, 213, 122);
+    border: 1.5px rgb(139, 105, 11) solid;
+    h1, h2, h3, h4, h5, h6, p {
+        color: rgb(139, 105, 11);
+    }
+}
+
+.check-button {
+    @extend .sml-button;
+    @include button-change(rgb(139, 236, 152), 28px, 28px);
+    background-color: rgb(111, 224, 126);
+    border: 1.5px rgb(5, 99, 18) solid;
+    h1, h2, h3, h4, h5, h6, p {
+        color: rgb(5, 99, 18);
+    }
+}
+
+.page-btn {
+    height: 35px;
+    width: max-content;
+    user-select: none;
+    font-size: 13pt;
+    font-weight: 600;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 .6rem;
+    margin-right: .1rem;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: darken($main-color, 5%);
+    border: 1px solid darken($main-color, 40%);
+    color: darken($main-color, 50%);
+    &:hover {
+        background-color: $main-color;
+    }
+}
+
+.page-btn-scnd {
+    @extend .page-btn;
+    background-color: darken($secondary-color, 50%);
+    border: 1px solid darken($secondary-color, 65%);
+    color: $secondary-color;
+    &:hover {
+        background-color: darken($secondary-color, 30%);
+    }
+}
+
+.page-btn-start {
+    @extend .page-btn;
+    margin-left: .5rem;
+    border-top-left-radius: 5px;
+}
+
+.page-btn-start-scnd {
+    @extend .page-btn-scnd;
+    border-top-left-radius: 5px;
+}
+
+.page-btn-end {
+    @extend .page-btn;
+    margin-right: .5rem;
+    border-top-right-radius: 5px;
+}
+
+.page-btn-end-scnd {
+    @extend .page-btn-scnd;
+    border-top-right-radius: 5px;
+}

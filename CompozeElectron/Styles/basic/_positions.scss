@@ -1,0 +1,149 @@
+$base-margin: .5rem;
+$base-padding: .5rem;
+
+
+.front {
+    z-index: 1;
+}
+
+// Columns
+$base-width: 1/12 * 100%;
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.parent-height {
+    flex-grow: 1;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: $base-width * $i;
+    }
+}
+
+// Spacing
+.space-evenly {
+    justify-content: space-evenly;
+}
+
+// Align horizontally
+.center-x {
+    display: flex;
+    justify-content: center;
+}
+
+.align-left {
+    display: flex;
+    justify-content: start;
+}
+
+.align-right {
+    display: flex;
+    justify-content: end;
+}
+
+// Align vertically
+.center-y {
+    display: flex;
+    align-items: center;
+}
+
+.align-top {
+    display: flex;
+    align-items: start;
+}
+
+.align-bottom {
+    align-items: end;
+}
+
+// Adjust center values for flexbox
+.stack {
+    display: flex;
+    flex-direction: column;
+
+    &.center-x {
+        align-items: center;
+    }
+    &.align-left {
+        align-items: start;
+    }
+    &.align-right {
+        align-items: end;
+    }
+    &.center-y {
+        justify-content: center;
+    }
+    &.align-top {
+        justify-content: start;
+    }
+    &.align-bottom {
+        justify-content: end;
+    }
+}
+
+// Margins and padding
+@for $i from 0 through 6 {
+    .m-#{$i} {
+        margin: $i * $base-margin !important;
+    }
+    .ml-#{$i} {
+        margin-left: $i * $base-margin !important;
+    }
+    .mr-#{$i} {
+        margin-right: $i * $base-margin !important;
+    }
+    .mt-#{$i} {
+        margin-top: $i * $base-margin !important;
+    }
+    .mb-#{$i} {
+        margin-bottom: $i * $base-margin !important;
+    }
+    .mx-#{$i} {
+        margin-left: $i * $base-margin !important;
+        margin-right: $i * $base-margin !important;
+    }
+    .my-#{$i} {
+        margin-top: $i * $base-margin !important;
+        margin-bottom: $i * $base-margin !important;
+    }
+
+    .p-#{$i} {
+        padding: $i * $base-padding !important;
+    }
+    .pl-#{$i} {
+        padding-left: $i * $base-padding !important;
+    }
+    .pr-#{$i} {
+        padding-right: $i * $base-padding !important;
+    }
+    .pt-#{$i} {
+        padding-top: $i * $base-padding !important;
+    }
+    .pb-#{$i} {
+        padding-bottom: $i * $base-padding !important;
+    }
+    .px-#{$i} {
+        padding-left: $i * $base-padding !important;
+        padding-right: $i * $base-padding !important;
+    }
+    .py-#{$i} {
+        padding-top: $i * $base-padding !important;
+        padding-bottom: $i * $base-padding !important;
+    }
+
+}
+
+// Widths
+.w-90 {
+    width: 90%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-100 {
+    width: 100%;
+}

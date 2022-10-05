@@ -1,0 +1,80 @@
+@import 'basic/color';
+@import 'basic/positions';
+
+table {
+    margin: $base-margin;
+    color: $dark-second-color;
+    tr {
+        border-top: 1px $bg-dark solid;
+        border-right: 1.5px $bg-dark solid;
+        border-left: 1.5px $bg-dark solid;
+        padding: .5rem;
+        &:first-child {
+            border-top-width: 1.5px;
+            border-right-width: 1.5px;
+            border-left-width: 1.5px;
+        }
+        &:last-child {
+            border-bottom: 1.5px $bg-dark solid;
+        }
+    }
+    th {
+        border-right: 1px $bg-dark solid;
+        text-align: left;
+        padding: .3rem;
+        padding-right: .75rem;
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        font-weight: 600;
+    }
+    td {
+        border-right: 1px $bg-dark solid;
+        padding: .3rem;
+        padding-right: .75rem;
+    }
+    &.alternate-colors {
+        tr:nth-child(2n) {
+            background-color: $main-color;
+        }
+    }
+    &.bold-top {
+        tr:first-child {
+            background-color: darken($main-color, 7%);
+        }
+    }
+}
+
+.t-dark {
+    color: white;
+    background-color: $bg-dark;
+    tr {
+        border-right-color: black;
+        border-left-color: black;
+        border-top-color: white;
+        &:first-child {
+            border-right-color: black;
+            border-left-color: black;
+            border-top-color: black;
+        }
+        &:last-child {
+            border-bottom-color: black;
+        }
+    }
+    th {
+        border-color: white;
+    }
+    td {
+        border-color: white;
+    }
+
+    &.alternate-colors {
+        tr:nth-child(2n) {
+            background-color: darken($main-blue, 60%);
+        }
+    }
+    &.bold-top {
+        tr:first-child {
+            background-color: darken($main-blue, 65%);
+        }
+    }
+}

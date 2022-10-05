@@ -1,0 +1,68 @@
+@import 'basic/color';
+
+.badge {
+    width: max-content;
+    height: max-content;
+    margin: .25rem;
+    margin-left: 0rem;
+    padding: .5rem .7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 3px;
+    font-size: 14;
+    align-self: center;
+}
+
+.badge-dark {
+    @extend .badge;
+    border: 0px;
+    background-color: $bg-dark;
+    color: white;
+}
+
+.badge-light {
+    @extend .badge;
+    background-color: $bg-light;
+    color: black;
+}
+
+.badge-main {
+    @extend .badge;
+    border: 0px;
+    background-color: darken($main-color, 10%);
+    color: white;
+}
+
+.badge-second {
+    @extend .badge;
+    border: 0px;
+    background-color: darken($secondary-color, 50%);
+    color: white;
+}
+
+.badge-red {
+    @extend .badge;
+    border: 0px;
+    background-color: darken($accent-red, 20%);
+    color: white;
+}
+
+.badge-green {
+    @extend .badge;
+    border: 0px;
+    background-color: darken($accent-green, 30%);
+    color: white;
+}
+
+.badge-circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.badge-pill {
+    border-radius: 15px;
+}

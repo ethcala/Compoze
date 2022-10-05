@@ -40,3 +40,14 @@ C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64
 C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\package-lock.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\package.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\dart.exe
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-x64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-arm64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\AspNetCore.SassCompiler.dll

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Irish+Grover&family=Raleway&family=Spectral:wght@300&display=swap');
+@import 'positions';
+
+$font-header: 'Spectral', Times, serif;
+$font-basic: 'Raleway', Arial, sans-serif;
+$font-fun: 'Irish Grover', Papyrus, fantasy;
+$font-code: 'Inconsolata', 'Lucida Console', monospace;
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-header;
+    margin: $base-margin;
+    padding: $base-padding;
+}
+
+p {
+    font-family: $font-basic;
+    margin: $base-margin;
+    padding: $base-padding;
+    line-height: normal;
+    font-size: 14pt;
+}
+
+$largest-size: 27pt;
+$decrease: 2;
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: $largest-size - ($decrease * ($i - 1));
+    }
+}
+
+ul>li {
+    margin: .7rem;
+    padding-left: .5rem;
+    list-style-position: outside;
+    list-style-type: circle;
+}
+
+ol>li {
+    margin: .7rem;
+    padding-left: .5rem;
+    list-style-position: outside;
+    list-style-type: lower-latin;
+}
+
+.list-unstyled {
+    >li {
+        list-style: none;
+    }
+}
+
+.list-bullet {
+    >li {
+        list-style: disc;
+    }
+}
+
+// Alignment
+.txt-a-center {
+    text-align: center;
+}
+
+.txt-a-left {
+    text-align: left;
+}
+
+.txt-a-right {
+    text-align: right;
+}
+
+// Colours
+.txt-black {
+    color: black !important;
+}
+
+.txt-white {
+    color: white !important;
+}
+
+// Weights
+.txt-w-light { 
+    font-weight: 300;
+}
+
+.txt-w-normal { 
+    font-weight: 400;
+}
+
+.txt-w-semibold { 
+    font-weight: 600;
+}
+
+.txt-w-bold { 
+    font-weight: 700;
+}
+
+// Sizes
+.txt-s-lg {
+    font-size: 20pt;
+}
+
+.txt-s-md {
+    font-size: 16pt;
+}
+
+.txt-s-sm {
+    font-size: 14pt;
+}
+
+// Decorations
+.txt-d-line-thru {
+    text-decoration: line-through;
+}
+
+.txt-d-line-under {
+    text-decoration: underline;
+}
+
+.no-deco {
+    text-decoration: none;
+}
+
+// Fonts
+.txt-font-header {
+    font-family: $font-header !important;
+}
+
+.txt-font-basic {
+    font-family: $font-basic !important;
+}
+
+.txt-font-code {
+    font-family: $font-code !important;
+}
+
+.txt-font-fun {
+    font-family: $font-fun !important;
+}

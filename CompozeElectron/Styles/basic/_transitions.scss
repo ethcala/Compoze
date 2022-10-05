@@ -1,0 +1,13 @@
+@import '../mixins';
+
+.tr-sq-larger {
+    @include tr-larger(200px, 200px);
+}
+
+.tr-rect-larger {
+    @include tr-larger(300px, 200px);
+}
+
+.tr-smsq-larger {
+    @include tr-larger(100px, 100px);
+}

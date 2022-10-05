@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+B/JTU/mYbZOiA+4mKIP7urbVHaMqua9j+RazDB5kaM=",
+  "Hash": "LBcyAM/u2PhZS3sHfJVaKfWdVtoudxqJI2w0tdv0P5s=",
   "Source": "CompozeElectron",
   "BasePath": "_content/CompozeElectron",
   "Mode": "Default",
@@ -66,6 +66,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\css\\style.css",
+      "SourceId": "CompozeElectron",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\",
+      "BasePath": "_content/CompozeElectron",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    },
+    {
+      "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\css\\style.css.map",
+      "SourceId": "CompozeElectron",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\",
+      "BasePath": "_content/CompozeElectron",
+      "RelativePath": "css/style.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css.map"
     },
     {
       "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\favicon.ico",
