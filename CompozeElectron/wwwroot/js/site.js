@@ -11,14 +11,14 @@ const dropdown = () => {
 
     if (!navbar.classList.contains('nav-responsive')) {
         navbar.classList.add('nav-responsive');
-        navButton.innerHTML = "<i class='fa fa-times'></i>";
+        navButton.innerHTML = "<i class='fa-solid fa-xmark'></i>";
         for (const elem of items) {
             let content = elem.innerHTML;
             elem.innerHTML = content;
         }
     } else {
         navbar.classList.remove('nav-responsive');
-        navButton.innerHTML = "<i class='fa fa-bars'></i>";
+        navButton.innerHTML = "<i class='fa-solid fa-bars'></i>";
         for (const elem of items) {
             let content = elem.innerHTML;
             elem.innerHTML = content;
