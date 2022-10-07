@@ -1,6 +1,9 @@
 using ElectronNET.API;
 using Auth0.AspNetCore.Authentication;
 using CompozeElectron;
+using ElectronNET.API.Entities;
+
+// code used from https://blogs.msmvps.com/bsonnino/2022/01/01/transforming-your-asp-net-core-mvc-app-to-native-with-electron/
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +49,7 @@ app.MapControllerRoute(
 
 if (HybridSupport.IsElectronActive)
 {
+    CreateMenu();
     CreateElectronWindow();
 }
 
@@ -53,6 +57,46 @@ app.Run();
 
 async void CreateElectronWindow()
 {
-    var window = await Electron.WindowManager.CreateWindowAsync();
+    var options = new BrowserWindowOptions
+    {
+        Width = 1024,
+        Height = 1024,
+        Title = "Compoze"
+    };
+    var window = await Electron.WindowManager.CreateWindowAsync(options);
     window.OnClosed += () => Electron.App.Quit();
+}
+
+void CreateMenu()
+{
+    var fileMenu = new MenuItem[]
+    {
+        new MenuItem { Label = "Home", 
+                                Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/") },
+        new MenuItem { Label = "Privacy", 
+                                Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/Privacy") },
+        new MenuItem { Type = MenuType.separator },
+        new MenuItem { Role = MenuRole.quit }
+    };
+
+    var viewMenu = new MenuItem[]
+    {
+        new MenuItem { Role = MenuRole.reload },
+        new MenuItem { Role = MenuRole.forcereload },
+        new MenuItem { Role = MenuRole.toggledevtools },
+        new MenuItem { Type = MenuType.separator },
+        new MenuItem { Role = MenuRole.resetzoom },
+        new MenuItem { Role = MenuRole.zoomin },
+        new MenuItem { Role = MenuRole.zoomout },
+        new MenuItem { Type = MenuType.separator },
+        new MenuItem { Role = MenuRole.togglefullscreen }
+    };
+
+    var menu = new MenuItem[] 
+    {
+        new MenuItem { Label = "File", Type = MenuType.submenu, Submenu = fileMenu },
+        new MenuItem { Label = "View", Type = MenuType.submenu, Submenu = viewMenu }
+    };
+
+    Electron.Menu.SetApplicationMenu(menu);
 }
