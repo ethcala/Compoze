@@ -1,0 +1,8 @@
+@model CompozeElectron.Models.UserProfileViewModel
+@{
+    ViewData["Title"] = "User Settings";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@Html.Partial("_UserProfile", Model)

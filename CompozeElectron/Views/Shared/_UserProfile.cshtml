@@ -1,0 +1,10 @@
+@model CompozeElectron.Models.UserProfileViewModel
+
+<div class="row background-l-grey">
+    <img class="square tr-smsq-larger border-none" src="@Model.ProfileImage" alt="Profile image" />
+    <div class="stack">
+        <h3>@Model.Name</h3>
+        <p>@Model.EmailAddress</p>
+    </div>
+</div>
+<button>Edit Information</button>
