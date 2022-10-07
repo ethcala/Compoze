@@ -8,36 +8,23 @@
 </head>
 <body>
     <header>
-        <nav class="navbar nav-dark">
-                <a class="nav-title" asp-area="" asp-controller="Home" asp-action="Index">Compoze</a>
-                <span class="nav-icon"></span>
-                <div class="item-holder">
-                    @if(User.Identity.IsAuthenticated)
-                    {
-                        <ul>
-                            <li>
-                                <p class="nav-item active"><a asp-area="" asp-controller="UserInfo" asp-action="Dashboard">Dashboard</a></p>
-                            </li>
-                            <li class="nav-item">
-                                <p class="nav-item"></p><a asp-area="" asp-controller="UserInfo" asp-action="UserSettings">Settings</a>
-                            </li>
-                            <li class="nav-item">
-                                <p class="nav-item"></p><a asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a>
-                            </li>
-                        </ul>
-                    } else {
-                        <ul>
-                            <li class="nav-item active">
-                                <p class="nav-item active"></p><a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <p class="nav-item"></p><a asp-area="" asp-controller="Account" asp-action="Login">Log In</a>
-                            </li>
-                        </ul>
-                    }
-                </div>
+        <div class="navbar nav-dark">
+            <div class="item-holder">
+                <p class="nav-title"><a asp-area="" asp-controller="Home" asp-action="Index">Compoze</a></p>
+                @if(User.Identity.IsAuthenticated)
+                {
+                    <p class="nav-item active"><a asp-area="" asp-controller="UserInfo" asp-action="Dashboard">Dashboard</a></p>
+                    <p class="nav-item"><a asp-area="" asp-controller="UserInfo" asp-action="UserSettings">Settings</a></p>
+                    <p class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a></p>
+                } else {
+                    <p class="nav-item active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></p>
+                    <p class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Log In</a></p>
+                }
             </div>
-        </nav>
+            <a href="javascript:void(0);" class="nav-icon">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -47,7 +34,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            Copyriht&copy; Ethan Calabrese 2022<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            Copyright&copy; Ethan Calabrese 2022<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/js/site.js" asp-append-version="true"></script>
