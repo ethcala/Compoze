@@ -17,3 +17,20 @@
         height: 30%;
     }
 }
+
+.highlight-effect {
+    position: relative;
+}
+
+.highlight-effect::before {
+    background-color: hsl(241°, 69%, 78%);
+
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    left: -2px;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-2deg);
+}

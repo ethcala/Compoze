@@ -7196,6 +7196,22 @@ ol > li {
   height: 30%;
 }
 
+.highlight-effect {
+  position: relative;
+}
+
+.highlight-effect::before {
+  background-color: hsl(241deg, 69%, 78%);
+  content: "";
+  position: absolute;
+  width: calc(100% + 4px);
+  height: 60%;
+  left: -2px;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(-2deg);
+}
+
 html {
   background-color: rgb(241, 241, 241);
   color: rgb(28, 7, 102);
