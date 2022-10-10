@@ -34,3 +34,16 @@
     z-index: -1;
     transform: rotate(-2deg);
 }
+
+.fancybutton {
+    background-color: $bg-dark;
+    color: $txt-light;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.project-name {
+    padding: 0;
+    margin-left: 2rem;
+    font-size: 12pt;
+}

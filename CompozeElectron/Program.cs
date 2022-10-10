@@ -2,6 +2,8 @@ using ElectronNET.API;
 using Auth0.AspNetCore.Authentication;
 using CompozeElectron;
 using ElectronNET.API.Entities;
+using CompozeData.Models;
+using CompozeData.Services;
 
 // code used from https://blogs.msmvps.com/bsonnino/2022/01/01/transforming-your-asp-net-core-mvc-app-to-native-with-electron/
 
@@ -10,11 +12,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.UseElectron(args);
 
 // Add services to the container.
+builder.Services.Configure<CompozeDatabaseSettings>(
+    builder.Configuration.GetSection("CompozeDatabase"));
+builder.Services.AddSingleton<CompozeService>();
 builder.Services
     .AddAuth0WebAppAuthentication(options => {
         options.Domain = builder.Configuration["Auth0:Domain"];
         options.ClientId = builder.Configuration["Auth0:ClientId"];
-        options.Scope = "openid profile email";
+        options.Scope = "openid profile email sub";
     });
 builder.Services.AddSassCompiler();
 // builder.Services.AddHostedService(sp => new NpmWatchHostedService(

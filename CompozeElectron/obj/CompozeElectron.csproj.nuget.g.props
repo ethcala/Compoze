@@ -13,6 +13,7 @@
     <SourceRoot Include="C:\Users\Chris\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\6.0.9\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\6.0.9\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
     <Import Project="$(NuGetPackageRoot)aspnetcore.sasscompiler\1.55.0\build\AspNetCore.SassCompiler.props" Condition="Exists('$(NuGetPackageRoot)aspnetcore.sasscompiler\1.55.0\build\AspNetCore.SassCompiler.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">

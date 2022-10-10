@@ -14,6 +14,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompozeData\CompozeData.csproj" />
+  </ItemGroup>
   <Target Name="Install NPM modules" BeforeTargets="Build" Inputs="package-lock.json" Outputs="node_modules/.install-stamp">
     <Exec Command="npm ci" Condition="'$(OS)' != 'Windows_NT'" />
     <Exec Command="npm install" Condition="'$(OS)' == 'Windows_NT'" />

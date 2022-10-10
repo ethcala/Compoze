@@ -7212,6 +7212,19 @@ ol > li {
   transform: rotate(-2deg);
 }
 
+.fancybutton {
+  background-color: rgb(28, 7, 102);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.project-name {
+  padding: 0;
+  margin-left: 5px;
+  font-size: 12pt;
+}
+
 html {
   background-color: rgb(241, 241, 241);
   color: rgb(28, 7, 102);
