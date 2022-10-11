@@ -77,6 +77,8 @@ void CreateMenu()
 {
     var fileMenu = new MenuItem[]
     {
+        new MenuItem { Label = "New Project",
+                                Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/UserInfo/NewProject")},
         new MenuItem { Label = "Home", 
                                 Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/") },
         new MenuItem { Label = "Privacy", 

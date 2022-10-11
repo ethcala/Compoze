@@ -34,4 +34,16 @@ public class UserInfoController : Controller
             ProfileImage = User.FindFirst(c => c.Type == "picture")?.Value
         });
     }
+    public IActionResult NewProject()
+    {
+        if(!User.Identity.IsAuthenticated) {
+            return Redirect("Home/Index");
+        }
+        return View();
+    }
+    [HttpPost]
+    public IActionResult CreateProject(Project newProject)
+    {
+        return Redirect("Dashboard");
+    }
 }
