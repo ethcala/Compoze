@@ -5,8 +5,8 @@
 }
 
 <div class="background-l-grey stack-sm row mt-2">
-    <div class="col-3 border-round background-lighter">
-        <p><strong>Projects</strong></p>
+    <div class="col-3 border-round background-lighter dashboard-box h-auto-sm">
+        <h6 class="txt-font-basic">Projects</h6>
         @if(projects != null && projects.Count > 0) 
         {
             @foreach(Project p in projects)
@@ -17,8 +17,8 @@
             <p class="project-name">↳ No Projects Found</p>
         }
     </div>
-    <div class="col-9 border-round background-lighter">
+    <div class="col-9 border-round background-lighter dashboard-box">
         <h2>@ViewData["Title"]</h2>
-        <div class="fancybutton"><a class="txt-light no-deco mx-2" href="/UserInfo/NewProject">+ New Project</button></div>
+        <div class="fancybutton position-bottom"><a class="txt-light no-deco mx-2" href="/UserInfo/NewProject">+ New Project</button></div>
     </div>
 </div>

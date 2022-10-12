@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using CompozeData.Services;
 using CompozeData.Models;
+using System.Net.Http.Headers;
 
 namespace CompozeElectron.Controllers;
 public class UserInfoController : Controller
@@ -55,7 +56,17 @@ public class UserInfoController : Controller
 
         newProject.UserId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-        dal.CreateProject(newProject);
+        string projectId = dal.CreateProject(newProject);
+        
+        var client = new HttpClient();
+
+        var request = new HttpRequestMessage(new HttpMethod("PATCH"), "https://login.auth0.com/api/v2/users/" + newProject.UserId);
+        request.Content = new StringContent("{\"lastEdited\": \"" + projectId + "\"}");
+        request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json"); 
+        
+        var response = client.SendAsync(request);
+
+        Console.WriteLine(response);
 
         return RedirectToAction("Dashboard","UserInfo");
     }

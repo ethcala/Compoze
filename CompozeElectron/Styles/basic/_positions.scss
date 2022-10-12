@@ -6,12 +6,44 @@ $base-padding: .5rem;
     z-index: 1;
 }
 
+@media screen and (min-width: 1280px) {
+    .ul-wrap {
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        columns: 3;
+        margin-bottom: 20px;
+        column-gap: 8rem;
+        >li {
+            display: inline-block;
+        }
+    }
+}
+
+.height-h6 {
+    height: 20px;
+}
+
+.h-fit {
+    height: fit-content;
+}
+
+.mh-20 {
+    max-height: 150px;
+    width: auto;
+}
+
+
 // Columns
 $base-width: 1/12 * 100%;
 
 .row {
     display: flex;
     flex-direction: row;
+}
+
+.row-rv {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .parent-height {
@@ -22,11 +54,47 @@ $base-width: 1/12 * 100%;
     .col-#{$i} {
         width: $base-width * $i;
     }
+    // specific to this project
+    .down-col-#{$i} {
+        >img {
+            width: $base-width * $i;
+        }
+    }
+}
+
+// Widths
+.w-40 {
+    width: 40%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-90 {
+    width: 90%;
+}
+.w-100 {
+    width: 100% !important;
+}
+
+// Square
+.square-sm {
+    width: 50px;
+    height: 50px;
+}
+
+.icon-circle {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
 }
 
 // Spacing
 .space-evenly {
     justify-content: space-evenly;
+}
+
+.space-between {
+    justify-content: space-between;
 }
 
 // Align horizontally
@@ -86,42 +154,46 @@ $base-width: 1/12 * 100%;
 }
 
 // Margins and padding
+.m-auto {
+    margin: auto;
+}
+
 @for $i from 0 through 6 {
     .m-#{$i} {
-        margin: $i * $base-margin !important;
+        margin: $i * $base-margin;
     }
     .ml-#{$i} {
-        margin-left: $i * $base-margin !important;
+        margin-left: $i * $base-margin;
     }
     .mr-#{$i} {
-        margin-right: $i * $base-margin !important;
+        margin-right: $i * $base-margin;
     }
     .mt-#{$i} {
-        margin-top: $i * $base-margin !important;
+        margin-top: $i * $base-margin;
     }
     .mb-#{$i} {
-        margin-bottom: $i * $base-margin !important;
+        margin-bottom: $i * $base-margin;
     }
     .mx-#{$i} {
-        margin-left: $i * $base-margin !important;
-        margin-right: $i * $base-margin !important;
+        margin-left: $i * $base-margin;
+        margin-right: $i * $base-margin;
     }
     .my-#{$i} {
-        margin-top: $i * $base-margin !important;
-        margin-bottom: $i * $base-margin !important;
+        margin-top: $i * $base-margin;
+        margin-bottom: $i * $base-margin;
     }
 
     .p-#{$i} {
-        padding: $i * $base-padding !important;
+        padding: $i * $base-padding;
     }
     .pl-#{$i} {
-        padding-left: $i * $base-padding !important;
+        padding-left: $i * $base-padding;
     }
     .pr-#{$i} {
-        padding-right: $i * $base-padding !important;
+        padding-right: $i * $base-padding;
     }
     .pt-#{$i} {
-        padding-top: $i * $base-padding !important;
+        padding-top: $i * $base-padding;
     }
     .pb-#{$i} {
         padding-bottom: $i * $base-padding !important;
@@ -137,13 +209,56 @@ $base-width: 1/12 * 100%;
 
 }
 
-// Widths
-.w-90 {
-    width: 90%;
+@media screen and (max-width: 1000px) {
+    @for $i from 0 through 6 {
+        .m-#{$i}-md {
+            margin: $i * $base-margin !important;
+        }
+        .ml-#{$i}-md {
+            margin-left: $i * $base-margin !important;
+        }
+        .mr-#{$i}-md {
+            margin-right: $i * $base-margin !important;
+        }
+        .mt-#{$i}-md {
+            margin-top: $i * $base-margin !important;
+        }
+        .mb-#{$i}-md {
+            margin-bottom: $i * $base-margin !important;
+        }
+        .mx-#{$i}-md {
+            margin-left: $i * $base-margin !important;
+            margin-right: $i * $base-margin !important;
+        }
+        .my-#{$i}-md {
+            margin-top: $i * $base-margin !important;
+            margin-bottom: $i * $base-margin !important;
+        }
+    
+        .p-#{$i}-md {
+            padding: $i * $base-padding !important;
+        }
+        .pl-#{$i}-md {
+            padding-left: $i * $base-padding !important;
+        }
+        .pr-#{$i}-md {
+            padding-right: $i * $base-padding !important;
+        }
+        .pt-#{$i}-md {
+            padding-top: $i * $base-padding !important;
+        }
+        .pb-#{$i}-md {
+            padding-bottom: $i * $base-padding !important;
+        }
+        .px-#{$i}-md {
+            padding-left: $i * $base-padding !important;
+            padding-right: $i * $base-padding !important;
+        }
+        .py-#{$i}-md {
+            padding-top: $i * $base-padding !important;
+            padding-bottom: $i * $base-padding !important;
+        }
+    
+    }
 }
-.w-50 {
-    width: 50%;
-}
-.w-100 {
-    width: 100%;
-}
+

@@ -3,27 +3,27 @@
 }
 
 <div>
-    <form action="CreateProject" method="post">
-        <div class="row">
+    <form class="m-auto mt-2 w-90" action="CreateProject" method="post">
+        <div class="row space-between">
             <label for="projectName">Project Name: </label>
             <input type="text" name="projectName" id="projectName">
         </div>
-        <div class="row">
+        <div class="row space-between">
             <label for="authorName">Author Name: </label>
             <input type="text" name="authorName" id="authorName">
         </div>
-        <div class="row">
+        <div class="row space-between">
             <label for="projectGenre">Genre: </label>
             <input type="text" name="projectGenre" id="projectGenre">
         </div>
-        <div class="row">
+        <div class="row space-between">
             <label for="documentLayout">Project Layout: </label>
-            <select name="documentLayout" id="documentLayout">
+            <select name="documentLayout" id="documentLayout" class="w-50">
                 <option value="chapters">Chapters</option>
                 <option value="scenes">Scenes</option>
                 <option value="connected">Connected</option>
             </select>
         </div>
-        <input type="submit" value="Create" />
+        <input type="submit" value="Create" class="mt-2 mb-1" />
     </form>
 </div>

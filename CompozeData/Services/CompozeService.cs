@@ -33,13 +33,18 @@ public class CompozeService
         await _documentsCollection.Find(_ => true).ToListAsync();
 
     // Create Methods
-    public void CreateTemplateAsync(Template newTemplate) =>
-        _templatesCollection.InsertOneAsync(newTemplate);
-    public void CreateProject(Project newProject) {
-        _projectsCollection.InsertOne(newProject);
+    public string CreateTemplate(Template newTemplate) {
+        _templatesCollection.InsertOne(newTemplate);
+        return newTemplate.TemplateId;        
     }
-    public void CreateDocumentAsync(Document newDocument) =>
-        _documentsCollection.InsertOneAsync(newDocument);
+    public string CreateProject(Project newProject) {
+        _projectsCollection.InsertOne(newProject);
+        return newProject.ProjectId;
+    }
+    public string CreateDocument(Document newDocument) {
+        _documentsCollection.InsertOne(newDocument);
+        return newDocument.DocumentId;
+    }
 
     // Update Methods
     public async Task UpdateTemplateAsync(string id, Template updated) =>

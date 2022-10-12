@@ -42,10 +42,32 @@
     width: 400px;
     padding: 15px;
     border-radius: 5px;
+    width: 70%;
+    margin-left: 1rem;
 }
 
 .project-name {
     padding: 0;
-    margin-left: 2rem;
+    padding-left: .5rem;
+    margin-left: 1.5rem;
     font-size: 12pt;
+    width: 80%;
+    cursor: pointer;
+    &:hover {
+        background-color: #e1e1e1;
+    }
+}
+
+.dashboard-box {
+    min-height: 70vh;
+}
+
+.position-bottom {
+    float: bottom;
+}
+
+@media screen and (max-width: 800px) {
+    .h-auto-sm {
+        height: auto;
+    }    
 }

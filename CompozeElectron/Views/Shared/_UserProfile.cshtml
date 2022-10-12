@@ -1,10 +1,22 @@
 @model CompozeElectron.Models.UserProfileViewModel
 
-<div class="row background-l-grey">
-    <img class="square tr-smsq-larger border-none" src="@Model.ProfileImage" alt="Profile image" />
+<div class="row border-all border-round p-1">
+    <img class="square border-none" src="@Model.ProfileImage" alt="Profile image" />
     <div class="stack">
-        <h3>@Model.Name</h3>
-        <p>@Model.EmailAddress</p>
+        <h3 class="m-0">@Model.Name</h3>
+        <p class="m-0">@Model.EmailAddress</p>
     </div>
 </div>
-<button class="fancybutton">Edit Information</button>
+@* 
+
+<div id="edit-info-modal" class="modal">
+    <div class="modal-content">
+        <span class="x-button close" onclick="cloesModal('edit-info-modal')">X</span>
+        <h3 class="border-bottom">Edit Information</h3>
+        <form method="post" action="EditInfo">
+
+            <input type="submit" value="Update" class="mt-2 mb-1" />
+        </form>
+    </div>
+</div>
+<div class="fancybutton position-bottom"><a class="txt-light no-deco mx-2" href="/UserInfo/EditInfo">Edit Information</button></div> *@
