@@ -24,8 +24,24 @@ public class UserInfoController : Controller
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         model.Projects = dal.GetUserProjects(userId);
         ViewBag.Projects = model.Projects;
+        ViewBag.LastProject = GetLastProject(userId).Result;
         return View(model);
     }
+
+    private async Task<Project> GetLastProject(string userId)
+    {
+
+        var client = new HttpClient();
+
+        var request = new HttpRequestMessage(new HttpMethod("GET"), "https://login.auth0.com/api/v2/users/" + userId);
+        var response = client.Send(request);
+
+        string responseStr = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine(responseStr);
+        return new Project(){ProjectName = "Test"};
+    }
+
     [Authorize]
     public IActionResult UserSettings() 
     {
@@ -65,8 +81,6 @@ public class UserInfoController : Controller
         request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json"); 
         
         var response = client.SendAsync(request);
-
-        Console.WriteLine(response);
 
         return RedirectToAction("Dashboard","UserInfo");
     }

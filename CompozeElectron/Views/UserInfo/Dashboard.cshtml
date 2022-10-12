@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Dashboard";
     List<Project> projects = ViewBag.Projects;
+    Project lastProject = ViewBag.LastProject;
 }
 
 <div class="background-l-grey stack-sm row mt-2">
@@ -19,6 +20,12 @@
     </div>
     <div class="col-9 border-round background-lighter dashboard-box">
         <h2>@ViewData["Title"]</h2>
+        @if(lastProject != null && lastProject.ProjectName != null && lastProject.ProjectName != "")
+        {
+            <p>Last Edited: @lastProject.ProjectName</p>
+        } else {
+            <p>Last Edited: None</p>
+        }
         <div class="fancybutton position-bottom"><a class="txt-light no-deco mx-2" href="/UserInfo/NewProject">+ New Project</button></div>
     </div>
 </div>
