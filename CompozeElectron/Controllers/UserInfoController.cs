@@ -20,9 +20,10 @@ public class UserInfoController : Controller
     public IActionResult Dashboard() 
     {
         ProjectListViewModel model = new ProjectListViewModel();
-        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         model.Projects = dal.GetUserProjects(userId);
-        return View();
+        ViewBag.Projects = model.Projects;
+        return View(model);
     }
     [Authorize]
     public IActionResult UserSettings() 
@@ -37,13 +38,25 @@ public class UserInfoController : Controller
     public IActionResult NewProject()
     {
         if(!User.Identity.IsAuthenticated) {
-            return Redirect("Home/Index");
+            return RedirectToAction("Index","Home");
         }
         return View();
     }
     [HttpPost]
     public IActionResult CreateProject(Project newProject)
     {
-        return Redirect("Dashboard");
+        if(newProject.ProjectName == null || newProject.ProjectName == "") {
+            newProject.ProjectName = "Untitled";
+        }
+
+        if(newProject.AuthorName == null || newProject.AuthorName == "") {
+            newProject.AuthorName = "Author";
+        }
+
+        newProject.UserId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+
+        dal.CreateProject(newProject);
+
+        return RedirectToAction("Dashboard","UserInfo");
     }
 }

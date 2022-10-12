@@ -38,8 +38,10 @@
 .fancybutton {
     background-color: $bg-dark;
     color: $txt-light;
-    padding: 10px;
-    cursor: pointer;
+    text-decoration: none;
+    width: 400px;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .project-name {

@@ -699,6 +699,10 @@ ol > li {
   color: white !important;
 }
 
+.txt-light {
+  color: white !important;
+}
+
 .txt-w-light {
   font-weight: 300;
 }
@@ -2358,6 +2362,10 @@ ol > li {
   color: white !important;
 }
 
+.txt-light {
+  color: white !important;
+}
+
 .txt-w-light {
   font-weight: 300;
 }
@@ -3085,6 +3093,10 @@ ol > li {
 }
 
 .txt-white {
+  color: white !important;
+}
+
+.txt-light {
   color: white !important;
 }
 
@@ -4434,6 +4446,10 @@ ol > li {
 }
 
 .txt-white {
+  color: white !important;
+}
+
+.txt-light {
   color: white !important;
 }
 
@@ -6109,6 +6125,10 @@ ol > li {
   color: white !important;
 }
 
+.txt-light {
+  color: white !important;
+}
+
 .txt-w-light {
   font-weight: 300;
 }
@@ -6893,6 +6913,10 @@ ol > li {
   color: white !important;
 }
 
+.txt-light {
+  color: white !important;
+}
+
 .txt-w-light {
   font-weight: 300;
 }
@@ -7215,8 +7239,10 @@ ol > li {
 .fancybutton {
   background-color: rgb(28, 7, 102);
   color: white;
-  padding: 10px;
-  cursor: pointer;
+  text-decoration: none;
+  width: 400px;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .project-name {
