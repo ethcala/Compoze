@@ -29,6 +29,18 @@ public class CompozeService
         Project found = _projectsCollection.Find(p => p.ProjectId == projectId).First();
         return found;
     }
+    public List<Template> GetDefaultTemplates()
+    {
+        return _templatesCollection.Find(t => t.UserId == "default").ToList();
+    }
+    public List<Template> GetUserTemplates(string userId)
+    {
+        return _templatesCollection.Find(t => t.UserId == userId).ToList();
+    }
+    public Template GetTemplateById(string templateId)
+    {
+        return _templatesCollection.Find(t => t.TemplateId == templateId).First();
+    }
 
     // Get Methods
     public async Task<List<Template>> GetTemplatesAsync() => 
