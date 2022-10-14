@@ -1,0 +1,16 @@
+@using CompozeData.Models
+@model ProjectListViewModel;
+
+<div class="col-3 border-round background-lighter dashboard-box h-auto-sm">
+    <h6 class="txt-font-basic">Projects</h6>
+    @if(Model.Projects != null && Model.Projects.Count > 0) 
+    {
+        @foreach(Project p in Model.Projects)
+        {
+            //string redirect = "/UserInfo/Project/" + @p.ProjectId;
+            <p class="project-name"><a class="no-deco" href="/UserInfo/Project/@p.ProjectId">↳ @p.ProjectName</a></p>
+        }
+    } else {
+        <p class="project-name">↳ No Projects Found</p>
+    }
+</div>

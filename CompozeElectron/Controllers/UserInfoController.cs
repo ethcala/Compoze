@@ -20,15 +20,15 @@ public class UserInfoController : Controller
     [Authorize]
     public IActionResult Dashboard() 
     {
-        ProjectListViewModel model = new ProjectListViewModel();
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        ProjectListViewModel model = new ProjectListViewModel();
         model.Projects = dal.GetUserProjects(userId);
-        ViewBag.Projects = model.Projects;
-        ViewBag.LastProject = GetLastProject(userId).Result;
+        ViewBag.ProjectListModel = model;
+        //ViewBag.LastProject = GetLastProject(userId).Result;
         return View(model);
     }
-
-    private async Task<Project> GetLastProject(string userId)
+    
+    public Project GetLastProject(string userId)
     {
 
         var client = new HttpClient();
@@ -36,9 +36,9 @@ public class UserInfoController : Controller
         var request = new HttpRequestMessage(new HttpMethod("GET"), "https://login.auth0.com/api/v2/users/" + userId);
         var response = client.Send(request);
 
-        string responseStr = await response.Content.ReadAsStringAsync();
+        //string responseStr = await response.Content.ReadAsStringAsync();
 
-        Console.WriteLine(responseStr);
+        //Console.WriteLine(responseStr);
         return new Project(){ProjectName = "Test"};
     }
 
@@ -52,6 +52,7 @@ public class UserInfoController : Controller
             ProfileImage = User.FindFirst(c => c.Type == "picture")?.Value
         });
     }
+
     public IActionResult NewProject()
     {
         if(!User.Identity.IsAuthenticated) {
@@ -59,6 +60,7 @@ public class UserInfoController : Controller
         }
         return View();
     }
+
     [HttpPost]
     public IActionResult CreateProject(Project newProject)
     {
@@ -74,14 +76,32 @@ public class UserInfoController : Controller
 
         string projectId = dal.CreateProject(newProject);
         
-        var client = new HttpClient();
+        // var client = new HttpClient();
 
-        var request = new HttpRequestMessage(new HttpMethod("PATCH"), "https://login.auth0.com/api/v2/users/" + newProject.UserId);
-        request.Content = new StringContent("{\"lastEdited\": \"" + projectId + "\"}");
-        request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json"); 
+        // var request = new HttpRequestMessage(new HttpMethod("PATCH"), "https://login.auth0.com/api/v2/users/" + newProject.UserId);
+        // request.Content = new StringContent("{\"lastEdited\": \"" + projectId + "\"}");
+        // request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json"); 
         
-        var response = client.SendAsync(request);
+        // var response = client.SendAsync(request);
 
         return RedirectToAction("Dashboard","UserInfo");
+    }
+    [HttpGet]
+    [Route("UserInfo/Project/{projectId}")]
+    public IActionResult Project(string projectId)
+    {
+        Project thisProject = dal.GetProjectById(projectId);
+        ViewBag.ThisProject = thisProject;
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        ProjectListViewModel model = new ProjectListViewModel();
+        model.Projects = dal.GetUserProjects(userId);
+        ViewBag.ProjectListModel = model;
+        return View();
+    }
+    [HttpPost]
+    public IActionResult EditProject(Project newProject)
+    {
+        string id = dal.UpdateProject(newProject.ProjectId, newProject);
+        return RedirectToAction("Project", new {projectId = newProject.ProjectId});
     }
 }

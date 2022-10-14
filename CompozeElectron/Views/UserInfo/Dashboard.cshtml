@@ -1,23 +1,13 @@
 @using CompozeData.Models
 @{
     ViewData["Title"] = "Dashboard";
-    List<Project> projects = ViewBag.Projects;
+    List<Project> projects = ViewBag.ProjectListModel.Projects;
+    ProjectListViewModel model = ViewBag.ProjectListModel;
     Project lastProject = ViewBag.LastProject;
 }
 
 <div class="background-l-grey stack-sm row mt-2">
-    <div class="col-3 border-round background-lighter dashboard-box h-auto-sm">
-        <h6 class="txt-font-basic">Projects</h6>
-        @if(projects != null && projects.Count > 0) 
-        {
-            @foreach(Project p in projects)
-            {
-                <p class="project-name">↳ @p.ProjectName</p>
-            }
-        } else {
-            <p class="project-name">↳ No Projects Found</p>
-        }
-    </div>
+    @Html.Partial("_ProjectList", model)
     <div class="col-9 border-round background-lighter dashboard-box">
         <h2>@ViewData["Title"]</h2>
         @if(lastProject != null && lastProject.ProjectName != null && lastProject.ProjectName != "")

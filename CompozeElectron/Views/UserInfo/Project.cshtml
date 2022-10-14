@@ -1,0 +1,43 @@
+@using CompozeData.Models
+@{
+    Project project = ViewBag.ThisProject;
+    ProjectListViewModel model = ViewBag.ProjectListModel;
+    ViewData["Title"] = project.ProjectName;
+}
+
+<div class="background-l-grey stack-sm row mt-2">
+    @Html.Partial("_ProjectList", model)
+    <div class="col-9 border-round background-lighter dashboard-box">
+        <h2 class="center-x">@ViewData["Title"]</h2>
+        <div>
+            <form class="w-90 m-auto" asp-controller="UserInfo" asp-action="EditProject" method="post">
+                <div class="stack">
+                    <input type="hidden" value="@project.ProjectId" name="projectId"/>
+                    <input type="hidden" value="@project.UserId" name="userId"/>
+                    <input type="hidden" value="@project.Categories" name="categories"/>
+                    <div class="row space-between center-y">
+                        <label for="projectName">Project Name: </label>
+                        <input type="text" value="@project.ProjectName" name="projectName" id="projectName">
+                    </div>
+                    <div class="row space-between center-y">
+                        <label for="authorName">Author Name: </label>
+                        <input type="text" value="@project.AuthorName" name="authorName" id="authorName">
+                    </div>
+                    <div class="row space-between center-y">
+                        <label for="projectGenre">Genre: </label>
+                        <input type="text" value="@project.ProjectGenre" name="projectGenre" id="projectGenre">
+                    </div>
+                    <div class="row space-between center-y">
+                        <label for="documentLayout">Project Layout: </label>
+                        <select name="documentLayout" value="@project.DocumentLayout" id="documentLayout" class="w-50">
+                            <option value="Chapters">Chapters</option>
+                            <option value="Scenes">Scenes</option>
+                            <option value="Connected">Connected</option>
+                        </select>
+                    </div>
+                </div>
+                <input type="submit" value="Update" class="mt-2 mb-1" />
+            </form>
+        </div>
+    </div>
+</div>

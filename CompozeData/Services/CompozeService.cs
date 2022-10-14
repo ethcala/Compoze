@@ -24,6 +24,12 @@ public class CompozeService
         return _projectsCollection.Find(p => p.UserId == userId).ToList();
     }       
 
+    public Project GetProjectById(string projectId)
+    {
+        Project found = _projectsCollection.Find(p => p.ProjectId == projectId).First();
+        return found;
+    }
+
     // Get Methods
     public async Task<List<Template>> GetTemplatesAsync() => 
         await _templatesCollection.Find(_ => true).ToListAsync();
@@ -49,8 +55,10 @@ public class CompozeService
     // Update Methods
     public async Task UpdateTemplateAsync(string id, Template updated) =>
         await _templatesCollection.ReplaceOneAsync(x => x.TemplateId == id, updated);
-    public async Task UpdateProjectAsync(string id, Project updated) =>
-        await _projectsCollection.ReplaceOneAsync(x => x.ProjectId == id, updated);
+    public string UpdateProject(string id, Project updated) {
+        ReplaceOneResult result = _projectsCollection.ReplaceOne(x => x.ProjectId == id, updated);
+        return id;
+    }
     public async Task UpdateDocumentAsync(string id, Document updated) =>
         await _documentsCollection.ReplaceOneAsync(x => x.DocumentId == id, updated);
 
