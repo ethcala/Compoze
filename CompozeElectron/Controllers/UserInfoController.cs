@@ -104,4 +104,11 @@ public class UserInfoController : Controller
         string id = dal.UpdateProject(newProject.ProjectId, newProject);
         return RedirectToAction("Project", new {projectId = newProject.ProjectId});
     }
+    
+    [HttpPost]
+    public IActionResult DeleteProject(string projId)
+    {
+        dal.DeleteProject(projId);
+        return Redirect("Dashboard");
+    }
 }

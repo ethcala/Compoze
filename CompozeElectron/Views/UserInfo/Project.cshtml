@@ -38,6 +38,12 @@
                 </div>
                 <input type="submit" value="Update" class="mt-2 mb-1" />
             </form>
+            <form class="w-90 m-auto mt-2" asp-controller="UserInfo" asp-action="DeleteProject" method="post">
+                <h2>Warning</h2>
+                <p>Clicking this button will delete your project.</p>
+                <input type="hidden" value="@project.ProjectId" name="projId"/>
+                <input class="button-red" type="submit" value="Delete" class="mt-2 mb-1" />
+            </form>
         </div>
     </div>
 </div>

@@ -77,8 +77,8 @@ public class CompozeService
     // Delete Methods
     public async Task DeleteTemplate(string id) =>
         await _templatesCollection.DeleteOneAsync(x => x.TemplateId == id);
-    public async Task DeleteProject(string id) =>
-        await _projectsCollection.DeleteOneAsync(x => x.ProjectId == id);
+    public void DeleteProject(string id) =>
+        _projectsCollection.DeleteOne(x => x.ProjectId == id);
     public async Task DeleteDocument(string id) =>
         await _documentsCollection.DeleteOneAsync(x => x.DocumentId == id);
 }
