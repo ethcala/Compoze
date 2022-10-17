@@ -2,6 +2,7 @@
 @{
     Project project = ViewBag.ThisProject;
     ProjectListViewModel model = ViewBag.ProjectListModel;
+    List<Document> documents = ViewBag.DocumentListModel.Documents;
     ViewData["Title"] = project.ProjectName;
 }
 
@@ -45,5 +46,40 @@
                 <input class="button-red" type="submit" value="Delete" class="mt-2 mb-1" />
             </form>
         </div>
+        @if(project.Categories != null && project.Categories != "")
+        {
+            @foreach(string cat in project.Categories.Split(" "))
+            {
+                <div class="border-all border-round w-90">
+                    <h3>@cat</h3>
+                    @if(documents.Count > 0)
+                    {
+                        @foreach(Document doc in documents)
+                        {
+                            if(doc.DocumentContent.Split("====")[0] == cat)
+                            {
+                                <div class="square">
+                                    <p>@doc.DocumentName</p>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            }
+        }
+        <div class="button-main px-2 mx-2" onclick="openModal('newcat-modal')">New Category</div>
+    </div>
+</div>
+
+<div id="newcat-modal" class="modal m-middle">
+    <div class="modal-content">
+        <span class="x-button close" onclick="closeModal('newcat-modal')">X</span>
+        <h3 class="border-bottom">New Category</h3>
+        <form class="border-none m-auto mt-2" method="post" asp-controller="UserInfo" asp-action="CreateCategory">
+            <input type="hidden" value="@project.ProjectId" name="projectId" />
+            <label for="category" class="m-auto">Category Name: </label>
+            <input type="text" name="category" />
+            <input type="submit" value="Create" class="mt-2 mb-1" />
+        </form>
     </div>
 </div>

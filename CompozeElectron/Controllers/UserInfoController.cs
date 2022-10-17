@@ -93,9 +93,15 @@ public class UserInfoController : Controller
         Project thisProject = dal.GetProjectById(projectId);
         ViewBag.ThisProject = thisProject;
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        
         ProjectListViewModel model = new ProjectListViewModel();
         model.Projects = dal.GetUserProjects(userId);
         ViewBag.ProjectListModel = model;
+
+        DocumentListViewModel docModel = new DocumentListViewModel();
+        dal.GetDocumentsByProjectId(projectId);
+        ViewBag.DocumentListModel = docModel;
+
         return View();
     }
     [HttpPost]
@@ -110,5 +116,21 @@ public class UserInfoController : Controller
     {
         dal.DeleteProject(projId);
         return Redirect("Dashboard");
+    }
+    [HttpPost]
+    public IActionResult CreateCategory(string projectId, string category)
+    {
+        Project updated = dal.GetProjectById(projectId);
+        if(updated.Categories == null || updated.Categories == "")
+        {
+            updated.Categories = category;
+        } 
+        else 
+        {
+            updated.Categories += " " + category;
+        }
+        dal.UpdateProject(projectId, updated);
+
+        return RedirectToAction("Project", new {projectId = updated.ProjectId});
     }
 }

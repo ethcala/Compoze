@@ -27,3 +27,18 @@ const dropdown = () => {
 }
 
 navButton.addEventListener('click', dropdown);
+
+// Modal
+const openModal = (objectID) => {
+    document.getElementById(objectID).style.display = 'block';
+}
+
+const closeModal = (objectID) => {
+    document.getElementById(objectID).style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+    }
+}
