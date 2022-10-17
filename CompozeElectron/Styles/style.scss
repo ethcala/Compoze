@@ -138,9 +138,10 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    position: absolute;
+    position: fixed;
+    left: 0;
     bottom: 0;
-    width: 99%;
+    width: 100%;
     h1, h2, h3, h4, h5, h6 {
         font-family: $font-header, Times, serif;
         font-size: 16pt;

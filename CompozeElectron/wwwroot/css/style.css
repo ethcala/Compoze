@@ -10806,9 +10806,10 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: absolute;
+  position: fixed;
+  left: 0;
   bottom: 0;
-  width: 99%;
+  width: 100%;
 }
 footer h1, footer h2, footer h3, footer h4, footer h5, footer h6 {
   font-family: "Spectral", Times, serif, Times, serif;
