@@ -56,7 +56,7 @@
                     {
                         @foreach(Document doc in documents)
                         {
-                            if(doc.DocumentContent.Split("====")[0] == cat)
+                            if(doc.DocumentCategory == cat)
                             {
                                 <div class="square">
                                     <p>@doc.DocumentName</p>
