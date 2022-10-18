@@ -74,7 +74,7 @@ public class UserInfoController : Controller
 
         newProject.UserId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
 
-        string projectId = dal.CreateProject(newProject);
+        string projId = dal.CreateProject(newProject);
         
         // var client = new HttpClient();
 
@@ -84,7 +84,7 @@ public class UserInfoController : Controller
         
         // var response = client.SendAsync(request);
 
-        return RedirectToAction("Dashboard","UserInfo");
+        return RedirectToAction("Project", new {projectId = projId});
     }
     [HttpGet]
     [Route("UserInfo/Project/{projectId}")]
