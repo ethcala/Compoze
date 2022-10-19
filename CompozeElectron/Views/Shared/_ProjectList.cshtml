@@ -1,5 +1,8 @@
 @using CompozeData.Models
 @model ProjectListViewModel;
+@{
+    Model.Projects = Model.Projects.OrderByDescending(p=>p.EditDate).ToList();
+}
 
 <div class="col-3 border-round background-lighter dashboard-box h-auto-sm">
     <h6 class="txt-font-basic"><a class="no-deco" href="/UserInfo/Dashboard">Projects</a></h6>

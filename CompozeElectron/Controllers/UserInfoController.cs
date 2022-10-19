@@ -24,22 +24,14 @@ public class UserInfoController : Controller
         ProjectListViewModel model = new ProjectListViewModel();
         model.Projects = dal.GetUserProjects(userId);
         ViewBag.ProjectListModel = model;
-        //ViewBag.LastProject = GetLastProject(userId).Result;
+
+        if(model.Projects.Count > 0)
+        {
+            string latestId = model.Projects.OrderByDescending(p => p.EditDate).Take(1).First().ProjectId;
+            Project latestProj = dal.GetProjectById(latestId);
+            ViewBag.LastProject = latestProj;
+        }
         return View(model);
-    }
-    
-    public Project GetLastProject(string userId)
-    {
-
-        var client = new HttpClient();
-
-        var request = new HttpRequestMessage(new HttpMethod("GET"), "https://login.auth0.com/api/v2/users/" + userId);
-        var response = client.Send(request);
-
-        //string responseStr = await response.Content.ReadAsStringAsync();
-
-        //Console.WriteLine(responseStr);
-        return new Project(){ProjectName = "Test"};
     }
 
     [Authorize]
@@ -73,16 +65,9 @@ public class UserInfoController : Controller
         }
 
         newProject.UserId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        newProject.EditDate = DateTime.Now;
 
         string projId = dal.CreateProject(newProject);
-        
-        // var client = new HttpClient();
-
-        // var request = new HttpRequestMessage(new HttpMethod("PATCH"), "https://login.auth0.com/api/v2/users/" + newProject.UserId);
-        // request.Content = new StringContent("{\"lastEdited\": \"" + projectId + "\"}");
-        // request.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json"); 
-        
-        // var response = client.SendAsync(request);
 
         return RedirectToAction("Project", new {projectId = projId});
     }
@@ -113,6 +98,7 @@ public class UserInfoController : Controller
     [HttpPost]
     public IActionResult EditProject(Project newProject)
     {
+        newProject.EditDate = DateTime.Now;
         string id = dal.UpdateProject(newProject.ProjectId, newProject);
         return RedirectToAction("Project", new {projectId = newProject.ProjectId});
     }
@@ -135,6 +121,7 @@ public class UserInfoController : Controller
         {
             updated.Categories += "[=]" + category;
         }
+        updated.EditDate = DateTime.Now;
         dal.UpdateProject(projectId, updated);
 
         return RedirectToAction("Project", new {projectId = updated.ProjectId});
@@ -151,6 +138,10 @@ public class UserInfoController : Controller
         }
         Document doc = new Document(){ProjectId = projectId, DocumentName = docName, DocumentCategory = category, DocumentContent = templateContent};
         dal.CreateDocument(doc);
+        
+        Project editProject = dal.GetProjectById(projectId);
+        editProject.EditDate = DateTime.Now;
+        dal.UpdateProject(projectId, editProject);
 
         return RedirectToAction("Project", new {projectId = projectId});
     }
@@ -177,6 +168,10 @@ public class UserInfoController : Controller
     {
         string id = dal.UpdateDocument(newDoc.DocumentId, newDoc);
         string edit = "Last saved at " + DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second + ".";
+
+        Project editProject = dal.GetProjectById(newDoc.ProjectId);
+        editProject.EditDate = DateTime.Now;
+        dal.UpdateProject(newDoc.ProjectId, editProject);
 
         return RedirectToAction("Document", new {documentId = newDoc.DocumentId, lastEdit = edit});
     }

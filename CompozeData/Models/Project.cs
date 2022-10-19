@@ -13,6 +13,7 @@ namespace CompozeData.Models
         public string AuthorName { get; set; }
         public string ProjectGenre { get; set; }
         public string DocumentLayout { get; set; } // chapters, scenes
-        public string Categories { get; set; } // "Characters-Text Images-Gallery Settings-Text" [parse by spaces and dashes]
+        public string Categories { get; set; } // "Characters[=]Images[=]Settings" [parse by [=]]
+        public DateTime EditDate { get; set; }
     }
 }
