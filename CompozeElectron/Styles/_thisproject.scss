@@ -71,3 +71,13 @@
         height: auto;
     }    
 }
+
+.w-60 {
+    width: 60%;
+}
+
+.grid-3x3 {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+}

@@ -3,6 +3,7 @@
     Project project = ViewBag.ThisProject;
     ProjectListViewModel model = ViewBag.ProjectListModel;
     List<Document> documents = ViewBag.DocumentListModel.Documents;
+    List<Template> templates = ViewBag.TemplateListModel.Templates;
     ViewData["Title"] = project.ProjectName;
 }
 
@@ -10,8 +11,8 @@
     @Html.Partial("_ProjectList", model)
     <div class="col-9 border-round background-lighter dashboard-box">
         <h2 class="center-x">@ViewData["Title"]</h2>
-        <div>
-            <form class="w-90 m-auto" asp-controller="UserInfo" asp-action="EditProject" method="post">
+        <div class="p-0 stack">
+            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="EditProject" method="post">
                 <div class="stack">
                     <input type="hidden" value="@project.ProjectId" name="projectId"/>
                     <input type="hidden" value="@project.UserId" name="userId"/>
@@ -39,7 +40,7 @@
                 </div>
                 <input type="submit" value="Update" class="mt-2 mb-1" />
             </form>
-            <form class="w-90 m-auto mt-2" asp-controller="UserInfo" asp-action="DeleteProject" method="post">
+            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="DeleteProject" method="post">
                 <h2>Warning</h2>
                 <p>Clicking this button will delete your project.</p>
                 <input type="hidden" value="@project.ProjectId" name="projId"/>
@@ -48,26 +49,35 @@
         </div>
         @if(project.Categories != null && project.Categories != "")
         {
-            @foreach(string cat in project.Categories.Split(" "))
+            @foreach(string cat in project.Categories.Split("[=]"))
             {
-                <div class="border-all border-round w-90">
+                <div class="border-all">
                     <h3>@cat</h3>
                     @if(documents.Count > 0)
                     {
-                        @foreach(Document doc in documents)
-                        {
-                            if(doc.DocumentCategory == cat)
+                        <div class="grid-3x3">
+                            @foreach(Document doc in documents)
                             {
-                                <div class="square">
-                                    <p>@doc.DocumentName</p>
-                                </div>
+                                if(doc.DocumentCategory == cat)
+                                {
+                                    <div class="square border-all">
+                                        <p><strong><a href="~/UserInfo/Document/@doc.DocumentId">@doc.DocumentName</a></strong></p>
+                                    </div>
+                                }
                             }
-                        }
+                        </div>
                     }
+                    <div class="button-main px-2 mx-5" onclick="openModalWithCategoryName('newdoc-modal', '@cat')">New Document</div>
                 </div>
             }
+            <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
+        } else {
+            <div class="border-all">
+                <h3>No sections found</h3>
+                <p>Create a section to start writing.</p>
+                <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
+            </div>
         }
-        <div class="button-main px-2 mx-2" onclick="openModal('newcat-modal')">New Category</div>
     </div>
 </div>
 
@@ -79,6 +89,28 @@
             <input type="hidden" value="@project.ProjectId" name="projectId" />
             <label for="category" class="m-auto">Category Name: </label>
             <input type="text" name="category" />
+            <input type="submit" value="Create" class="mt-2 mb-1" />
+        </form>
+    </div>
+</div>
+
+<div id="newdoc-modal" class="modal m-middle">
+    <div class="modal-content">
+        <span class="x-button close" onclick="closeModal('newdoc-modal')">X</span>
+        <h3 class="border-bottom">New Document</h3>
+        <form class="border-none m-auto mt-2" method="post" asp-controller="UserInfo" asp-action="CreateDocument">
+            <input type="hidden" value="@project.ProjectId" name="projectId" />
+            <input type="hidden" value="" name="category" id="docCategory" />
+            <label for="docName" class="m-auto">Title: </label>
+            <input type="text" name="docName" />
+            <label for="template" class="m-auto">Template: </label>
+            <select name="template" value="None" id="template" class="w-50">
+                <option value="None">None</option>
+                @foreach(Template t in templates)
+                {
+                    <option value="@t.TemplateId">@t.TemplateName</option>
+                }
+            </select>
             <input type="submit" value="Create" class="mt-2 mb-1" />
         </form>
     </div>

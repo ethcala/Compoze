@@ -10672,6 +10672,16 @@ ol > li {
     height: auto;
   }
 }
+.w-60 {
+  width: 60%;
+}
+
+.grid-3x3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 html {
   background-color: rgb(241, 241, 241);
   color: rgb(28, 7, 102);

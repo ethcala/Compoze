@@ -50,6 +50,11 @@ public class CompozeService
         return _documentsCollection.Find(d => d.ProjectId == projectId).ToList();
     }
 
+    public Document GetDocumentById(string docId)
+    {
+        return _documentsCollection.Find(d => d.DocumentId == docId).First();
+    }
+
     // Get Methods
     public async Task<List<Template>> GetTemplatesAsync() => 
         await _templatesCollection.Find(_ => true).ToListAsync();
@@ -79,9 +84,10 @@ public class CompozeService
         _projectsCollection.ReplaceOne(x => x.ProjectId == id, updated);
         return id;
     }
-    public async Task UpdateDocumentAsync(string id, Document updated) =>
-        await _documentsCollection.ReplaceOneAsync(x => x.DocumentId == id, updated);
-
+    public string UpdateDocument(string id, Document updated) {
+        _documentsCollection.ReplaceOne(x => x.DocumentId == id, updated);
+        return id;
+    }
     // Delete Methods
     public async Task DeleteTemplate(string id) =>
         await _templatesCollection.DeleteOneAsync(x => x.TemplateId == id);

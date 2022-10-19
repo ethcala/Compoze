@@ -33,6 +33,12 @@ const openModal = (objectID) => {
     document.getElementById(objectID).style.display = 'block';
 }
 
+const openModalWithCategoryName = (objectID, catName) => {
+    console.log('test');
+    document.getElementById(objectID).style.display = 'block';
+    document.getElementById('docCategory').value = catName;
+}
+
 const closeModal = (objectID) => {
     document.getElementById(objectID).style.display = 'none';
 }

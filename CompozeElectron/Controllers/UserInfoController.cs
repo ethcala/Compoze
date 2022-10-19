@@ -86,6 +86,7 @@ public class UserInfoController : Controller
 
         return RedirectToAction("Project", new {projectId = projId});
     }
+
     [HttpGet]
     [Route("UserInfo/Project/{projectId}")]
     public IActionResult Project(string projectId)
@@ -99,8 +100,13 @@ public class UserInfoController : Controller
         ViewBag.ProjectListModel = model;
 
         DocumentListViewModel docModel = new DocumentListViewModel();
-        dal.GetDocumentsByProjectId(projectId);
+        docModel.Documents = dal.GetDocumentsByProjectId(projectId);
         ViewBag.DocumentListModel = docModel;
+
+        TemplateListViewModel templateModel = new TemplateListViewModel();
+        templateModel.Templates.AddRange(dal.GetDefaultTemplates());
+        templateModel.Templates.AddRange(dal.GetUserTemplates(userId));
+        ViewBag.TemplateListModel = templateModel;
 
         return View();
     }
@@ -127,10 +133,59 @@ public class UserInfoController : Controller
         } 
         else 
         {
-            updated.Categories += " " + category;
+            updated.Categories += "[=]" + category;
         }
         dal.UpdateProject(projectId, updated);
 
         return RedirectToAction("Project", new {projectId = updated.ProjectId});
+    }
+
+    [HttpPost]
+    public IActionResult CreateDocument(string projectId, string category, string docName, string template)
+    {
+        if(docName == "") docName = "Untitled";
+        string templateContent = "";
+        if(template != "None" && template != null && template != "")
+        {
+            templateContent = dal.GetTemplateById(template).TemplateContent;
+        }
+        Document doc = new Document(){ProjectId = projectId, DocumentName = docName, DocumentCategory = category, DocumentContent = templateContent};
+        dal.CreateDocument(doc);
+
+        return RedirectToAction("Project", new {projectId = projectId});
+    }
+
+    [HttpGet]
+    [Route("UserInfo/Document/{documentId}")]
+    public IActionResult Document(string documentId, string lastEdit = "")
+    {
+        Document doc = dal.GetDocumentById(documentId);
+        ViewBag.ThisDocument = doc;
+        
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        ProjectListViewModel model = new ProjectListViewModel();
+        model.Projects = dal.GetUserProjects(userId);
+        ViewBag.ProjectListModel = model;
+
+        ViewBag.EditedMessage = lastEdit;
+
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult EditDocument(Document newDoc)
+    {
+        string id = dal.UpdateDocument(newDoc.DocumentId, newDoc);
+        string edit = "Last saved at " + DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second + ".";
+
+        return RedirectToAction("Document", new {documentId = newDoc.DocumentId, lastEdit = edit});
+    }
+
+    [HttpPost]
+    public IActionResult DeleteDocument(string docId)
+    {
+        string projId = dal.GetDocumentById(docId).ProjectId;
+        dal.DeleteDocument(docId);
+        return RedirectToAction("Project", new {projectId = projId});
     }
 }

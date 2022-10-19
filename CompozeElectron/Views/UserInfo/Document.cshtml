@@ -1,0 +1,42 @@
+@using CompozeData.Models
+@{
+    Document document = ViewBag.ThisDocument;
+    ProjectListViewModel model = ViewBag.ProjectListModel;
+    ViewData["Title"] = document.DocumentName;
+}
+
+<div class="background-l-grey stack-sm row mt-2">
+    <div class="col-12 border-round background-lighter dashboard-box">
+        <a class="m-auto mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
+        <h2 class="center-x">@ViewData["Title"]</h2>
+        <div class="p-0 stack">
+            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="EditDocument" method="post">
+                <div class="stack">
+                    <input type="hidden" value="@document.DocumentId" name="documentId"/>
+                    <input type="hidden" value="@document.ProjectId" name="projectId"/>
+                    <input type="hidden" value="@document.DocumentName" name="documentName"/>
+                    <textarea class="txt-font-basic" name="documentContent">@document.DocumentContent</textarea>
+                    <input type="hidden" value="@document.DocumentCategory" name="documentCategory"/>
+                </div>
+                <input type="submit" value="Save" class="mt-2 mb-1" />
+            </form>
+            <div class="button-red px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
+            <p>@ViewBag.EditedMessage</p>
+        </div>
+    </div>
+</div>
+
+<div id="del-modal" class="modal m-middle">
+    <div class="modal-content">
+        <span class="x-button close" onclick="closeModal('del-modal')">X</span>
+        <h3 class="border-bottom">Delete</h3>
+        <p>Are you sure you want to delete this document?</p>
+        <div class="row">
+            <form class="border-none" asp-controller="UserInfo" asp-action="DeleteDocument" method="post">
+                <input type="hidden" value="@document.DocumentId" name="docId"/>
+                <input type="submit" value="Yes" />
+            </form>
+            <button class="fancybutton" onclick="closeModal('del-modal')">Cancel</button>
+        </div>
+    </div>
+</div>
