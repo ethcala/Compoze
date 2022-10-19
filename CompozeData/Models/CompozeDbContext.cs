@@ -10,5 +10,6 @@ namespace CompozeData.Models
         public virtual DbSet<Document> Documents { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Template> Templates { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

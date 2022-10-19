@@ -7,4 +7,5 @@ public class CompozeDatabaseSettings
     public string ProjectCollectionName { get; set; } = null!;
     public string TemplateCollectionName { get; set; } = null!;
     public string DocumentCollectionName { get; set; } = null!;
+    public string UserCollectionName { get; set; } = null!;
 }

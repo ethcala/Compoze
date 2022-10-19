@@ -8,6 +8,7 @@ public class CompozeService
     private readonly IMongoCollection<Document> _documentsCollection;
     private readonly IMongoCollection<Project> _projectsCollection;
     private readonly IMongoCollection<Template> _templatesCollection;
+    private readonly IMongoCollection<User> _usersCollection;
 
     public CompozeService(IOptions<CompozeDatabaseSettings> compozeDatabaseSettings)
     {
@@ -16,6 +17,7 @@ public class CompozeService
         _documentsCollection = mongoDatabase.GetCollection<Document>(compozeDatabaseSettings.Value.DocumentCollectionName);
         _templatesCollection = mongoDatabase.GetCollection<Template>(compozeDatabaseSettings.Value.TemplateCollectionName);
         _projectsCollection = mongoDatabase.GetCollection<Project>(compozeDatabaseSettings.Value.ProjectCollectionName);
+        _usersCollection = mongoDatabase.GetCollection<User>(compozeDatabaseSettings.Value.UserCollectionName);
     }
 
     // Unique Methods
@@ -49,11 +51,22 @@ public class CompozeService
     {
         return _documentsCollection.Find(d => d.ProjectId == projectId).ToList();
     }
-
     public Document GetDocumentById(string docId)
     {
         return _documentsCollection.Find(d => d.DocumentId == docId).First();
     }
+
+    // User Methods
+    public void CreateUser(User newUser)
+    {
+        _usersCollection.InsertOne(newUser);
+    }
+    public void UpdateUser(string userId, User updated)
+    {
+        _usersCollection.ReplaceOne(x => x.UserId == userId, updated);
+    }
+
+    // Other
 
     // Get Methods
     public async Task<List<Template>> GetTemplatesAsync() => 
