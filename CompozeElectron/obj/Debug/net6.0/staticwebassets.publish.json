@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LBcyAM/u2PhZS3sHfJVaKfWdVtoudxqJI2w0tdv0P5s=",
+  "Hash": "9JOY2OnszpJHcbMK9wDoaGaOnmNXMmyk+bD6AdrRhqI=",
   "Source": "CompozeElectron",
   "BasePath": "_content/CompozeElectron",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\obj\\Debug\\net6.0\\win-x64\\scopedcss\\projectbundle\\CompozeElectron.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\css\\darkmode.css",
+      "SourceId": "CompozeElectron",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\",
+      "BasePath": "_content/CompozeElectron",
+      "RelativePath": "css/darkmode.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\darkmode.css"
     },
     {
       "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\css\\site.css",

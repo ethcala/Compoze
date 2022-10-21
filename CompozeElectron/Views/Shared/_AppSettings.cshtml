@@ -1,0 +1,25 @@
+@model CompozeElectron.Models.UserProfileViewModel
+
+<div class="border-all border-round p-1 m-auto mt-2">
+    <h1 class="txt-a-center">App Settings</h1>
+    <form method="post" action="EditSettings" class="m-auto">
+        <input type="hidden" name="userId" value="@Model.UserId" />
+        <div class="row space-between">
+            <label for="darkMode">Dark Mode: </label>
+            <input type="checkbox" value="true" checked="@Model.DarkMode" name="darkMode" id="darkMode" />           
+        </div>
+        <div class="row space-between mt-1">
+            <label for="authorName">Default Author: </label>
+            <input type="text" value="@Model.AuthorName" name="authorName" id="authorName" />
+        </div>
+        <div class="row space-between mt-1">
+            <label for="projectLayout">Default Project Layout: </label>
+            <select value="@Model.AuthorName" name="projectLayout" id="projectLayout">
+                <option value="Chapters">Chapters</option>
+                <option value="Scenes">Scenes</option>
+                <option value="Connected">Connected</option>
+            </select>
+        </div>
+        <input class="mt-2" type="submit" value="Update"/>
+    </form>
+</div>

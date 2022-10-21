@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+@using CompozeData.Services
+@{
+    bool darkMode = false;
+    @if(User.Identity.IsAuthenticated)
+    {
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        darkMode = ViewBag.Dal.DoesUserUseDarkMode(userId);
+    }
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +18,10 @@
     <script src="https://kit.fontawesome.com/4a6c085fe1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    @if(darkMode == true)
+    {
+        <link rel="stylesheet" href="~/css/darkmode.css" asp-append-version="true" />
+    }
 </head>
 <body>
     <header>

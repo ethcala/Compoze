@@ -57,13 +57,30 @@ public class CompozeService
     }
 
     // User Methods
-    public void CreateUser(User newUser)
+    public User CreateUser(User newUser)
     {
         _usersCollection.InsertOne(newUser);
+        return GetUser(newUser.UserId);
     }
     public void UpdateUser(string userId, User updated)
     {
         _usersCollection.ReplaceOne(x => x.UserId == userId, updated);
+    }
+    public User GetUser(string userId)
+    {
+        return _usersCollection.Find(u => u.UserId == userId).FirstOrDefault();
+    }
+    public bool DoesUserUseDarkMode(string userId)
+    {
+        bool darkMode;
+        try
+        {
+            darkMode = _usersCollection.Find(u => u.UserId == userId).First().DarkMode;
+        } catch (Exception exception)
+        {
+            darkMode = false;
+        }
+        return darkMode;
     }
 
     // Other

@@ -6,11 +6,11 @@
 }
 
 <div class="background-l-grey stack-sm row mt-2">
-    <div class="col-12 border-round background-lighter dashboard-box">
-        <a class="m-auto mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
+    <div class="col-12 pt-1 border-round background-lighter dashboard-box">
+        <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
         <h2 class="center-x">@ViewData["Title"]</h2>
         <div class="p-0 stack">
-            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="EditDocument" method="post">
+            <form class="w-60 m-auto border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
                 <div class="stack">
                     <input type="hidden" value="@document.DocumentId" name="documentId"/>
                     <input type="hidden" value="@document.ProjectId" name="projectId"/>

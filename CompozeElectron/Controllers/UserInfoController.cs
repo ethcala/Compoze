@@ -20,6 +20,8 @@ public class UserInfoController : Controller
     [Authorize]
     public IActionResult Dashboard() 
     {
+        ViewBag.Dal = dal;
+
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         ProjectListViewModel model = new ProjectListViewModel();
         model.Projects = dal.GetUserProjects(userId);
@@ -31,25 +33,65 @@ public class UserInfoController : Controller
             Project latestProj = dal.GetProjectById(latestId);
             ViewBag.LastProject = latestProj;
         }
+
         return View(model);
     }
 
+    // create user settings document for users and present it to user
     [Authorize]
     public IActionResult UserSettings() 
     {
+        ViewBag.Dal = dal;
+        
+        // if no user then create user. if user then get user
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        User user = dal.GetUser(userId);
+        if(user == null)
+        {
+            user = dal.CreateUser(new User(){UserId = userId, DarkMode = false, AuthorName = "", ProjectLayout = "Chapters"});
+        }
+
         return View(new UserProfileViewModel()
         {
+            UserId = userId,
             Name = User.Identity.Name,
             EmailAddress = User.FindFirst(c => c.Type == ClaimTypes.Email)?.Value,
-            ProfileImage = User.FindFirst(c => c.Type == "picture")?.Value
+            ProfileImage = User.FindFirst(c => c.Type == "picture")?.Value,
+            DarkMode = user.DarkMode,
+            AuthorName = user.AuthorName,
+            ProjectLayout = user.ProjectLayout
         });
     }
 
+    [HttpPost]
+    public IActionResult EditSettings(UserProfileViewModel model)
+    {
+        User user = dal.GetUser(model.UserId);
+        user.DarkMode = model.DarkMode;
+        user.AuthorName = model.AuthorName;
+        user.ProjectLayout = model.ProjectLayout;
+
+        dal.UpdateUser(model.UserId, user);
+
+        return Redirect("UserSettings");
+    }
+
+    // Create new project with default author name and project layout if user has set one
     public IActionResult NewProject()
     {
-        if(!User.Identity.IsAuthenticated) {
-            return RedirectToAction("Index","Home");
+        ViewBag.Dal = dal;
+
+        string authorName = "";
+        string projectLayout = "";
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        User user = dal.GetUser(userId);
+        if(user != null)
+        {
+            authorName = user.AuthorName;
+            projectLayout = user.ProjectLayout;
         }
+        ViewBag.AuthorName = authorName;
+        ViewBag.ProjectLayout = projectLayout;
         return View();
     }
 
@@ -76,8 +118,27 @@ public class UserInfoController : Controller
     [Route("UserInfo/Project/{projectId}")]
     public IActionResult Project(string projectId)
     {
+        ViewBag.Dal = dal;
+
         Project thisProject = dal.GetProjectById(projectId);
+        if(thisProject.Categories == null || thisProject.Categories == "")
+        {
+            switch(thisProject.DocumentLayout)
+            {
+                case "Chapters":
+                    thisProject.Categories = "Chapters";
+                    break;
+                case "Scenes":
+                    thisProject.Categories = "Scenes";
+                    break;
+                case "Connected":
+                    thisProject.Categories = "Parts";
+                    break;
+            }
+            thisProject.Categories += "[=]Notes";
+        }
         ViewBag.ThisProject = thisProject;
+
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         
         ProjectListViewModel model = new ProjectListViewModel();
@@ -143,13 +204,15 @@ public class UserInfoController : Controller
         editProject.EditDate = DateTime.Now;
         dal.UpdateProject(projectId, editProject);
 
-        return RedirectToAction("Project", new {projectId = projectId});
+        return RedirectToAction("Document", new {documentId = doc.DocumentId});
     }
 
     [HttpGet]
     [Route("UserInfo/Document/{documentId}")]
     public IActionResult Document(string documentId, string lastEdit = "")
     {
+        ViewBag.Dal = dal;
+        
         Document doc = dal.GetDocumentById(documentId);
         ViewBag.ThisDocument = doc;
         
@@ -159,6 +222,7 @@ public class UserInfoController : Controller
         ViewBag.ProjectListModel = model;
 
         ViewBag.EditedMessage = lastEdit;
+        ViewBag.DarkMode = dal.DoesUserUseDarkMode(userId);
 
         return View();
     }

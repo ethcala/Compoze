@@ -10682,6 +10682,13 @@ ol > li {
   grid-template-columns: repeat(3, 1fr);
 }
 
+textarea {
+  min-height: 500px;
+  max-width: 100%;
+  margin: 0px;
+  font-size: 12pt;
+}
+
 html {
   background-color: rgb(241, 241, 241);
   color: rgb(28, 7, 102);
