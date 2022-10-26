@@ -2,10 +2,14 @@
 @using CompozeData.Services
 @{
     bool darkMode = false;
+    string color = "";
     @if(User.Identity.IsAuthenticated)
     {
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         darkMode = ViewBag.Dal.DoesUserUseDarkMode(userId);
+        color = ViewBag.Dal.GetColorToUse(userId);
+    } else {
+        color = ViewBag.Dal.GetColorToUse("");
     }
 }
 

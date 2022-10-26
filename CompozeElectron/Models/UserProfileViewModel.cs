@@ -9,5 +9,6 @@ public class UserProfileViewModel
     public bool DarkMode { get; set; }
     public string? AuthorName { get; set; }
     public string? ProjectLayout { get; set; }
+    public string? CustomColor { get; set; }
 
 }

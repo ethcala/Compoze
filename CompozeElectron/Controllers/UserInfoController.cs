@@ -70,6 +70,7 @@ public class UserInfoController : Controller
         user.DarkMode = model.DarkMode;
         user.AuthorName = model.AuthorName;
         user.ProjectLayout = model.ProjectLayout;
+        user.CustomColor = model.CustomColor;
 
         dal.UpdateUser(model.UserId, user);
 

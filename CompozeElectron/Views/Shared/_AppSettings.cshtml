@@ -9,6 +9,10 @@
             <input type="checkbox" value="true" checked="@Model.DarkMode" name="darkMode" id="darkMode" />           
         </div>
         <div class="row space-between mt-1">
+            <label for="customColor">Accent Colour (hex, leave blank for default): </label>
+            <input type="text" value="@Model.CustomColor" name="customColor" id="customColor" />
+        </div>
+        <div class="row space-between mt-1">
             <label for="authorName">Default Author: </label>
             <input type="text" value="@Model.AuthorName" name="authorName" id="authorName" />
         </div>

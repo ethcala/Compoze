@@ -12,5 +12,6 @@ namespace CompozeData.Models
         public bool DarkMode { get; set; } = false;
         public string? AuthorName { get; set; }
         public string? ProjectLayout { get; set; }
+        public string? CustomColor { get; set; }
     }
 }
