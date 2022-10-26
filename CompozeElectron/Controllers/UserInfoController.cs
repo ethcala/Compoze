@@ -134,6 +134,9 @@ public class UserInfoController : Controller
                 case "Connected":
                     thisProject.Categories = "Parts";
                     break;
+                default:
+                    thisProject.Categories = "Chapters";
+                    break;
             }
             thisProject.Categories += "[=]Notes";
         }

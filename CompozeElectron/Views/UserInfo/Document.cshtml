@@ -22,6 +22,8 @@
             </form>
             <div class="button-red px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
             <p>@ViewBag.EditedMessage</p>
+            <p>Characters: @document.DocumentContent.Length</p>
+            <p>Words: @document.DocumentContent.Split(" ").Length</p>
         </div>
     </div>
 </div>
