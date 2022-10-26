@@ -10,6 +10,10 @@ header, footer, .fancybutton, .nav-dark {
     background-color: rgb(70, 60, 120);
 }
 
+header {
+    border-bottom: rgb(70, 60, 120);
+}
+
 .background-l-grey {
     background-color: rgb(82, 82, 82);
 }

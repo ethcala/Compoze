@@ -48,7 +48,7 @@ public class UserInfoController : Controller
         User user = dal.GetUser(userId);
         if(user == null)
         {
-            user = dal.CreateUser(new User(){UserId = userId, DarkMode = false, AuthorName = "", ProjectLayout = "Chapters"});
+            user = dal.CreateUser(new User(){UserId = userId, DarkMode = false, AuthorName = "", ProjectLayout = "Chapters", CustomColor = "#1c0766"});
         }
 
         return View(new UserProfileViewModel()

@@ -83,29 +83,6 @@ public class CompozeService
         return darkMode;
     }
 
-    public string GetColorToUse(string userId)
-    {
-        string col = "";
-        if(userId == null || userId == "")
-        {
-            col = "#1c0766";
-        } else {
-            User u = GetUser(userId);
-            col = u.CustomColor.Trim();
-            if(!col.StartsWith('#') || (col.Length != 4 && col.Length != 7))
-            {
-                if(u.DarkMode)
-                {
-                    col = "#463c78";
-                } else {
-                    col = "#1c0766";
-                }
-            }
-        }
-
-        return col;
-    }
-
     // Other
 
     // Get Methods

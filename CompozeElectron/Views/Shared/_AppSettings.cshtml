@@ -9,8 +9,9 @@
             <input type="checkbox" value="true" checked="@Model.DarkMode" name="darkMode" id="darkMode" />           
         </div>
         <div class="row space-between mt-1">
-            <label for="customColor">Accent Colour (hex, leave blank for default): </label>
-            <input type="text" value="@Model.CustomColor" name="customColor" id="customColor" />
+            <label for="customColor">Accent Colour: </label>
+            <input type="color" value="@Model.CustomColor" name="customColor" id="customColor" />
+            <button id="default-accent-btn">Default</button>
         </div>
         <div class="row space-between mt-1">
             <label for="authorName">Default Author: </label>
@@ -18,7 +19,7 @@
         </div>
         <div class="row space-between mt-1">
             <label for="projectLayout">Default Project Layout: </label>
-            <select value="@Model.AuthorName" name="projectLayout" id="projectLayout">
+            <select value="@Model.ProjectLayout" name="projectLayout" id="projectLayout">
                 <option value="Chapters">Chapters</option>
                 <option value="Scenes">Scenes</option>
                 <option value="Connected">Connected</option>
@@ -27,3 +28,10 @@
         <input class="mt-2" type="submit" value="Update"/>
     </form>
 </div>
+<script>
+    let defaultCol = "#1c0766";
+
+    document.getElementById("default-accent-btn").addEventListener('click', ()=>{
+        document.getElementById("customColor").setAttribute('value', defaultCol);
+    });
+</script>
