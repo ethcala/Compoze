@@ -10,8 +10,9 @@
         <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
         <h2 class="center-x">@ViewData["Title"]</h2>
         <div class="p-0 stack">
-            <form class="w-60 m-auto border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
+            <form id="document-form" class="w-60 m-auto border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
                 <div class="stack">
+                    <input type=
                     <input type="hidden" value="@document.DocumentId" name="documentId"/>
                     <input type="hidden" value="@document.ProjectId" name="projectId"/>
                     <input type="hidden" value="@document.DocumentName" name="documentName"/>
@@ -42,3 +43,18 @@
         </div>
     </div>
 </div>
+<script>
+    let keysPressed = {};
+
+    document.addEventListener('keydown', (event) => {
+        keysPressed[event.key] = true;
+
+        if (keysPressed['Control'] && event.key == 's') {
+            document.getElementById("document-form").submit();
+        }
+    });
+
+    document.addEventListener('keyup', (event) => {
+        delete this.keysPressed[event.key];
+    });
+</script>
