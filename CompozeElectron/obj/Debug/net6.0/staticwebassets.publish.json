@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9JOY2OnszpJHcbMK9wDoaGaOnmNXMmyk+bD6AdrRhqI=",
+  "Hash": "LkHD2+iLEozaxREe+b0lnAXIj0fd0nULiNBZ0lcuFTM=",
   "Source": "CompozeElectron",
   "BasePath": "_content/CompozeElectron",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\obj\\Debug\\net6.0\\win-x64\\scopedcss\\projectbundle\\CompozeElectron.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\css\\accentcols.css",
+      "SourceId": "CompozeElectron",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\",
+      "BasePath": "_content/CompozeElectron",
+      "RelativePath": "css/accentcols.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\accentcols.css"
     },
     {
       "Identity": "C:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\wwwroot\\css\\darkmode.css",

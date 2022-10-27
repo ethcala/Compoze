@@ -26,18 +26,18 @@
     }
 </head>
 <body>
-    <header>
-        <div class="navbar nav-dark">
-            <div class="item-holder">
+    <header class="recolor-bg recolor-border">
+        <div class="navbar nav-dark recolor-bg">
+            <div class="item-holder recolor-bg">
                 <p class="nav-title"><a asp-area="" asp-controller="Home" asp-action="Index">Compoze</a></p>
                 @if(User.Identity.IsAuthenticated)
                 {
-                    <p class="nav-item active"><a asp-area="" asp-controller="UserInfo" asp-action="Dashboard">Dashboard</a></p>
-                    <p class="nav-item"><a asp-area="" asp-controller="UserInfo" asp-action="UserSettings">Settings</a></p>
-                    <p class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a></p>
+                    <p class="recolor-bg nav-item active"><a asp-area="" asp-controller="UserInfo" asp-action="Dashboard">Dashboard</a></p>
+                    <p class="recolor-bg nav-item"><a asp-area="" asp-controller="UserInfo" asp-action="UserSettings">Settings</a></p>
+                    <p class="recolor-bg nav-item"><a asp-area="" asp-controller="Account" asp-action="Logout">Log Out</a></p>
                 } else {
-                    <p class="nav-item active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></p>
-                    <p class="nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Log In</a></p>
+                    <p class="recolor-bg nav-item active"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></p>
+                    <p class="recolor-bg nav-item"><a asp-area="" asp-controller="Account" asp-action="Login">Log In</a></p>
                 }
             </div>
             <a href="javascript:void(0);" class="nav-icon">
@@ -54,9 +54,25 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted recolor-bg">
         <div class="container">
             Copyright&copy; Ethan Calabrese 2022
         </div>
     </footer>
+    <script>
+        let recols = document.getElementsByClassName("recolor-bg");
+        for(let r of recols) {
+            r.style.backgroundColor = "@color";
+        }
+
+        recols = document.getElementsByClassName("fancybutton");
+        for(let r of recols) {
+            r.style.backgroundColor = "@color";
+        }
+
+        recols = document.getElementsByClassName("recolor-border");
+        for(let r of recols) {
+            r.style.borderColor = "@color";
+        }
+    </script>
 </html>
