@@ -12,7 +12,6 @@
         <div class="p-0 stack">
             <form id="document-form" class="w-60 m-auto border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
                 <div class="stack">
-                    <input type=
                     <input type="hidden" value="@document.DocumentId" name="documentId"/>
                     <input type="hidden" value="@document.ProjectId" name="projectId"/>
                     <input type="hidden" value="@document.DocumentName" name="documentName"/>
@@ -51,6 +50,10 @@
 
         if (keysPressed['Control'] && event.key == 's') {
             document.getElementById("document-form").submit();
+        }
+
+        if (keysPressed['Control'] && event.key == 'f') {
+            
         }
     });
 
