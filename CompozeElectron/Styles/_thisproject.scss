@@ -106,3 +106,7 @@
     align-items: center;
     cursor: pointer;
 }
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}

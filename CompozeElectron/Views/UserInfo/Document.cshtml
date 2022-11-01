@@ -8,13 +8,13 @@
 <div class="background-l-grey stack-sm row mt-2">
     <div class="col-12 pt-1 border-round background-lighter dashboard-box">
         <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
-        <h2 class="center-x">@ViewData["Title"]</h2>
+        <h2 contenteditable="true" class="center-x" id="title-header">@ViewData["Title"]</h2>
         <div class="p-0 stack">
             <form id="document-form" class="w-60 m-auto border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
                 <div class="stack">
                     <input type="hidden" value="@document.DocumentId" name="documentId"/>
                     <input type="hidden" value="@document.ProjectId" name="projectId"/>
-                    <input type="hidden" value="@document.DocumentName" name="documentName"/>
+                    <input type="hidden" value="@document.DocumentName" name="documentName" id="documentName"/>
                     <input type="hidden" value="@document.DocumentContent" name="documentContent" id="documentContent"/>
                     <input type="hidden" value="@document.DocumentCategory" name="documentCategory"/>
                     <div contenteditable="true" class="txt-font-basic text-editor" id="text-editor">@document.DocumentContent</div>
@@ -66,11 +66,11 @@
     });
 
     window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-        event.target.style.display = 'none';
-        contentDiv.innerHTML = originalContent; 
+        if (event.target.id == 'search') {
+            event.target.style.display = 'none';
+            contentDiv.innerHTML = originalContent; 
+        }
     }
-}
 
     document.addEventListener('keydown', (event) => {
         keysPressed[event.key] = true;
@@ -99,5 +99,15 @@
 
     contentDiv.addEventListener('input', (evt) => {
         document.getElementById('documentContent').value = contentDiv.innerHTML;
+    });
+
+    document.getElementById('title-header').addEventListener('keydown', (evt) => {
+        if (evt.key != 'Tab' && evt.key != 'Enter') {
+            document.getElementById('documentName').value = document.getElementById('title-header').innerHTML.trim();
+        }
+
+        if(evt.key == 'Enter') {
+            document.getElementById("document-form").submit();
+        }
     });
 </script>

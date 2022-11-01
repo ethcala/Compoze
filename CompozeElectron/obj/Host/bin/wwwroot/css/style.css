@@ -10711,6 +10711,10 @@ ol > li {
   cursor: pointer;
 }
 
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
 html {
   background-color: rgb(241, 241, 241);
   color: rgb(28, 7, 102);
