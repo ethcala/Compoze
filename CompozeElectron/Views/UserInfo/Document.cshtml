@@ -15,15 +15,16 @@
                     <input type="hidden" value="@document.DocumentId" name="documentId"/>
                     <input type="hidden" value="@document.ProjectId" name="projectId"/>
                     <input type="hidden" value="@document.DocumentName" name="documentName"/>
-                    <textarea class="txt-font-basic" name="documentContent">@document.DocumentContent</textarea>
+                    <input type="hidden" value="@document.DocumentContent" name="documentContent" id="documentContent"/>
                     <input type="hidden" value="@document.DocumentCategory" name="documentCategory"/>
+                    <div contenteditable="true" class="txt-font-basic text-editor" id="text-editor">@document.DocumentContent</div>
                 </div>
                 <input type="submit" value="Save" class="mt-2 mb-1" />
             </form>
             <div class="button-red px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
             <p>@ViewBag.EditedMessage</p>
-            <p>Characters: @document.DocumentContent.Length</p>
-            <p>Words: @document.DocumentContent.Split(" ").Length</p>
+            @* <p>Characters: @document.DocumentContent.Length</p>
+            <p>Words: @document.DocumentContent.Split(" ").Length</p> *@
         </div>
     </div>
 </div>
@@ -42,22 +43,61 @@
         </div>
     </div>
 </div>
+
+<div id="search" class="modal noblackout">
+    <div class="modal-content">
+        <span class="close button-x" id="close-search">X</span>
+        <div class="row">
+            <label for="search-input">Search: </label>
+            <input type="text" id="search-input" />
+        </div>
+    </div>
+</div>
+
 <script>
     let keysPressed = {};
+
+    let contentDiv = document.getElementById('text-editor');
+    let originalContent = contentDiv.innerHTML;
+
+    document.getElementById('close-search').addEventListener('click', (evt) => {
+        contentDiv.innerHTML = originalContent;
+        document.getElementById('search').style.display = 'none';
+    });
+
+    window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+        contentDiv.innerHTML = originalContent; 
+    }
+}
 
     document.addEventListener('keydown', (event) => {
         keysPressed[event.key] = true;
 
         if (keysPressed['Control'] && event.key == 's') {
             document.getElementById("document-form").submit();
+            keysPressed['Control'] = false;
         }
 
         if (keysPressed['Control'] && event.key == 'f') {
-            
+            originalContent = contentDiv.innerHTML;
+            document.getElementById('search').style.display = 'block';
+            keysPressed['Control'] = false;
         }
     });
 
     document.addEventListener('keyup', (event) => {
-        delete this.keysPressed[event.key];
+        keysPressed[event.key] = false;
+    });
+
+    document.getElementById('search-input').addEventListener('input', (evt) => {
+        const reg = new RegExp(document.getElementById('search-input').value, 'g');
+        console.log(reg);
+        contentDiv.innerHTML = originalContent.replace(reg, `<span class="highlight">${document.getElementById('search-input').value}</span>`);
+    });
+
+    contentDiv.addEventListener('input', (evt) => {
+        document.getElementById('documentContent').value = contentDiv.innerHTML;
     });
 </script>

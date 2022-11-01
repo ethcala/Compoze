@@ -17,6 +17,10 @@
     background-color: rgba(0,0,0,0.5);
 }
 
+.modal.noblackout {
+    background-color: rgba(0,0,0,0);
+}
+
 .m-middle {
     >div {
         margin: 0;

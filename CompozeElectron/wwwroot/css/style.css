@@ -10389,6 +10389,10 @@ ol > li {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.modal.noblackout {
+  background-color: rgba(0, 0, 0, 0);
+}
+
 .m-middle > div {
   margin: 0;
   position: absolute;
@@ -10682,11 +10686,29 @@ ol > li {
   grid-template-columns: repeat(3, 1fr);
 }
 
-textarea {
+.text-editor {
   min-height: 500px;
   max-width: 100%;
   margin: 0px;
   font-size: 12pt;
+}
+
+.highlight {
+  padding: 0;
+  background-color: rgb(111, 203, 228);
+  color: rgb(29, 1, 1);
+}
+
+.button-x {
+  height: 20px;
+  width: 20px;
+  background-color: #d8d8d8;
+  border: 1px black solid;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 html {
