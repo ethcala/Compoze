@@ -9248,8 +9248,13 @@ button {
 }
 
 .no-form-style {
-  background-color: none;
+  background: none;
   padding: 0;
+}
+.no-form-style > * {
+  margin: 0;
+  height: 90%;
+  width: 100%;
 }
 
 .background-darker {

@@ -251,4 +251,36 @@ public class UserInfoController : Controller
         dal.DeleteDocument(docId);
         return RedirectToAction("Project", new {projectId = projId});
     }
+
+    [HttpPost]
+    public IActionResult UpdateCategoryName(string projectId, string updatedName, string oldName, string projectCategories)
+    {
+        List<Document> docs = dal.GetDocumentsByProjectId(projectId);
+        foreach (Document doc in docs) {
+            if(doc.DocumentCategory == oldName) {
+                doc.DocumentCategory = updatedName;
+                dal.UpdateDocument(doc.DocumentId, doc);
+            }
+        }
+
+        string newCategories = "";
+        int i = 0;
+
+        foreach(string cat in projectCategories.Split("[=]")) {
+            if(i != 0) {
+                newCategories += "[=]";
+            }
+
+            if(cat == oldName) {
+                newCategories += updatedName;
+            } else {
+                newCategories += cat;
+            }
+            i++;
+        }
+
+        dal.UpdateCategoryName(projectId, newCategories);
+
+        return RedirectToAction("Project", new {projectId = projectId});
+    }
 }

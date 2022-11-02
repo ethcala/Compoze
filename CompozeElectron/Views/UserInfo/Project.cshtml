@@ -45,8 +45,14 @@
         {
             @foreach(string cat in project.Categories.Split("[=]"))
             {
+                <form id="form-@cat" class="no-form-style" method="post" asp-controller="UserInfo" asp-action="UpdateCategoryName">
+                    <input type="hidden" value="@project.ProjectId" id="projectId" name="projectId" />
+                    <input type="hidden" value="@project.Categories" id="projectCategories" name="projectCategories" />
+                    <input type="hidden" value="@cat" id="oldName" name="oldName" />
+                    <input type="hidden" value="@cat" id="updatedName-@cat" class="updatedName" name="updatedName" />
+                </form>
                 <div class="border-all">
-                    <h3>@cat</h3>
+                    <h3 contenteditable="true" class="category-header" id="category-header-@cat">@cat</h3>
                     @if(documents.Count > 0)
                     {
                         <div class="grid-3x3">
@@ -125,6 +131,25 @@
     </div>
 </div>
 <script>
+    let originalCategories = document.getElementById("projectCategories").value;
+
+    const headers = [...document.getElementsByClassName('category-header')];
+
+    headers.forEach(header => {
+        let thisOriginal = header.innerHTML;
+
+        header.addEventListener('keyup', (evt) => {
+            if (evt.key != 'Tab' && evt.key != 'Enter') {
+                document.getElementById(`updatedName-${thisOriginal}`).value = header.innerHTML.trim();
+            }
+
+            if(evt.key == 'Enter') {
+                document.getElementById(`form-${thisOriginal}`).submit();
+            }
+        })
+    })
+
+
     document.getElementById('title-header').addEventListener('keyup', (evt) => {
         if (evt.key != 'Tab' && evt.key != 'Enter') {
             document.getElementById('projectName').value = document.getElementById('title-header').innerHTML.trim();

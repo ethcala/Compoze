@@ -32,6 +32,13 @@ public class CompozeService
         return found;
     }
 
+    public void UpdateCategoryName(string projectId, string changedString)
+    {
+        Project updateProj = GetProjectById(projectId);
+        updateProj.Categories = changedString;
+        UpdateProject(projectId, updateProj);
+    }
+
     // Template Methods
     public List<Template> GetDefaultTemplates()
     {
@@ -121,8 +128,12 @@ public class CompozeService
     // Delete Methods
     public async Task DeleteTemplate(string id) =>
         await _templatesCollection.DeleteOneAsync(x => x.TemplateId == id);
-    public void DeleteProject(string id) =>
+    public void DeleteDocument(string id) =>
+        _documentsCollection.DeleteOne(x => x.DocumentId == id);
+    public void DeleteProject(string id) {
+        List<Document> docs = GetDocumentsByProjectId(id);
+        docs.ForEach(doc => DeleteDocument(doc.DocumentId));
+        
         _projectsCollection.DeleteOne(x => x.ProjectId == id);
-    public async Task DeleteDocument(string id) =>
-        await _documentsCollection.DeleteOneAsync(x => x.DocumentId == id);
+    }
 }
