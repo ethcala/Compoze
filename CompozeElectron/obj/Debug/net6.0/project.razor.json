@@ -16371,6 +16371,11 @@
       "FilePath": "c:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\Views\\UserInfo\\UserSettings.cshtml",
       "TargetPath": "Views\\UserInfo\\UserSettings.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Chris\\Documents\\GitHub\\Compoze\\CompozeElectron\\Views\\Shared\\_DocumentInfo.cshtml",
+      "TargetPath": "Views\\Shared\\_DocumentInfo.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

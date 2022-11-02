@@ -5,6 +5,9 @@
     List<Document> documents = ViewBag.DocumentListModel.Documents;
     List<Template> templates = ViewBag.TemplateListModel.Templates;
     ViewData["Title"] = project.ProjectName;
+    List<Document> undoneDocs = documents;
+
+    ViewBag.Categories = project.Categories;
 }
 
 <div class="background-l-grey stack-sm row mt-2">
@@ -56,18 +59,29 @@
                     @if(documents.Count > 0)
                     {
                         <div class="grid-3x3">
-                            @foreach(Document doc in documents)
+                            @foreach(Document doc in documents.ToList())
                             {
                                 if(doc.DocumentCategory == cat)
                                 {
-                                    <div class="square border-all">
-                                        <p><strong><a href="~/UserInfo/Document/@doc.DocumentId">@doc.DocumentName</a></strong></p>
-                                    </div>
+                                    undoneDocs.Remove(doc);
+                                    @Html.Partial("_DocumentInfo", doc);
                                 }
                             }
                         </div>
                     }
                     <div class="button-main px-2 mx-5" onclick="openModalWithCategoryName('newdoc-modal', '@cat')">New Document</div>
+                </div>
+            }
+            @if(undoneDocs.Count > 0) {
+                <div class="border-all">
+                    <h3>Uncategorized</h3>
+                    <div class="grid-3x3">
+                        @foreach(Document doc in undoneDocs)
+                        {
+                            @Html.Partial("_DocumentInfo", doc);
+                        }
+                        </div>
+                    }
                 </div>
             }
             <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>

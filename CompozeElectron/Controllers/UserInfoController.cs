@@ -245,6 +245,18 @@ public class UserInfoController : Controller
     }
 
     [HttpPost]
+    public IActionResult UpdateDocumentCategory(Document newDoc)
+    {
+        string id = dal.UpdateDocument(newDoc.DocumentId, newDoc);
+
+        Project editProject = dal.GetProjectById(newDoc.ProjectId);
+        editProject.EditDate = DateTime.Now;
+        dal.UpdateProject(newDoc.ProjectId, editProject);
+
+        return RedirectToAction("Project", new {projectId = newDoc.ProjectId});
+    }
+
+    [HttpPost]
     public IActionResult DeleteDocument(string docId)
     {
         string projId = dal.GetDocumentById(docId).ProjectId;

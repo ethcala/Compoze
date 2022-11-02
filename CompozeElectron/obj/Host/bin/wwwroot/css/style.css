@@ -10659,6 +10659,7 @@ ol > li {
   border-radius: 5px;
   width: 70%;
   margin-left: 1rem;
+  cursor: pointer;
 }
 
 .project-name {
@@ -10723,6 +10724,18 @@ ol > li {
 
 [contenteditable] {
   outline: 0px solid transparent;
+}
+
+.docinfo {
+  font-size: 14pt;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.smallbtn {
+  width: 50%;
+  height: 20%;
 }
 
 html {

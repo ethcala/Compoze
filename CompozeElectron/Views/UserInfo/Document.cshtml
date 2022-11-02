@@ -101,7 +101,7 @@
         document.getElementById('documentContent').value = contentDiv.innerHTML;
     });
 
-    document.getElementById('title-header').addEventListener('keydown', (evt) => {
+    document.getElementById('title-header').addEventListener('keyup', (evt) => {
         if (evt.key != 'Tab' && evt.key != 'Enter') {
             document.getElementById('documentName').value = document.getElementById('title-header').innerHTML.trim();
         }

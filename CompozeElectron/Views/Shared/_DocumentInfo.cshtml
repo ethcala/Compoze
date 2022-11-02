@@ -1,0 +1,36 @@
+@model CompozeData.Models.Document;
+@{
+    string categories = ViewBag.Categories;
+}
+
+<div class="docinfo square border-all">
+    @if(Model.DocumentName != null && Model.DocumentName != "") {
+        <p><strong><a href="~/UserInfo/Document/@Model.DocumentId">@Model.DocumentName</a></strong></p>
+    } else {
+        <p><strong><a href="~/UserInfo/Document/@Model.DocumentId">Unnamed</a></strong></p>
+    }
+    <div class="smallbtn fancybutton" onclick="openModal('move-modal')">Move</div>
+</div>
+
+<div id="move-modal" class="modal m-middle">
+    <div class="modal-content">
+        <span class="x-button close" onclick="closeModal('move-modal')">X</span>
+        <h3>Move Where?</h3>
+        <div class="row">
+            <form class="border-none no-form-style" asp-controller="UserInfo" asp-action="UpdateDocumentCategory" method="post">
+                <input type="hidden" value="@Model.DocumentId" name="documentId"/>
+                <input type="hidden" value="@Model.ProjectId" name="projectId"/>
+                <input type="hidden" value="@Model.DocumentName" name="documentName"/>
+                <input type="hidden" value="@Model.DocumentContent" name="documentContent"/>
+                <select name="documentCategory" value="@Model.DocumentCategory" class="w-50">
+                    @foreach(string cat in categories.Split("[=]"))
+                    {
+                        <option value="@cat">@cat</option>
+                    }
+                </select>
+                <input class="fancybutton" type="submit" value="Update" />
+            </form>
+            <button class="fancybutton" onclick="closeModal('move-modal')">Cancel</button>
+        </div>
+    </div>
+</div>
