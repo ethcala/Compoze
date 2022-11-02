@@ -10,17 +10,14 @@
 <div class="background-l-grey stack-sm row mt-2">
     @Html.Partial("_ProjectList", model)
     <div class="col-9 border-round background-lighter dashboard-box">
-        <h2 class="center-x">@ViewData["Title"]</h2>
+        <h2 contenteditable="true" class="center-x" id="title-header">@ViewData["Title"]</h2>
         <div class="p-0 stack">
-            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="EditProject" method="post">
+            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="EditProject" method="post" id="project-form">
                 <div class="stack">
                     <input type="hidden" value="@project.ProjectId" name="projectId"/>
                     <input type="hidden" value="@project.UserId" name="userId"/>
                     <input type="hidden" value="@project.Categories" name="categories"/>
-                    <div class="row space-between center-y">
-                        <label for="projectName">Project Name: </label>
-                        <input type="text" value="@project.ProjectName" name="projectName" id="projectName">
-                    </div>
+                    <input type="hidden" value="@project.ProjectName" name="projectName" id="projectName">
                     <div class="row space-between center-y">
                         <label for="authorName">Author Name: </label>
                         <input type="text" value="@project.AuthorName" name="authorName" id="authorName">
@@ -38,13 +35,10 @@
                         </select>
                     </div>
                 </div>
-                <input type="submit" value="Update" class="mt-2 mb-1" />
-            </form>
-            <form class="w-60 m-auto" asp-controller="UserInfo" asp-action="DeleteProject" method="post">
-                <h2>Warning</h2>
-                <p>Clicking this button will delete your project.</p>
-                <input type="hidden" value="@project.ProjectId" name="projId"/>
-                <input class="button-red" type="submit" value="Delete" class="mt-2 mb-1" />
+                <div class="row">
+                    <input type="submit" value="Update" class="mt-2 mb-1" />
+                    <div class="fancybutton px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
+                </div>
             </form>
         </div>
         @if(project.Categories != null && project.Categories != "")
@@ -78,6 +72,21 @@
                 <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
             </div>
         }
+    </div>
+</div>
+
+<div id="del-modal" class="modal m-middle">
+    <div class="modal-content">
+        <span class="x-button close" onclick="closeModal('del-modal')">X</span>
+        <h3 class="border-bottom">Delete</h3>
+        <p>Are you sure you want to delete this project?</p>
+        <div class="row">
+            <form class="border-none no-form-style" asp-controller="UserInfo" asp-action="DeleteProject" method="post">
+                <input type="hidden" value="@project.ProjectId" name="projId"/>
+                <input class="fancybutton" type="submit" value="Yes" />
+            </form>
+            <button class="fancybutton" onclick="closeModal('del-modal')">Cancel</button>
+        </div>
     </div>
 </div>
 
@@ -115,3 +124,14 @@
         </form>
     </div>
 </div>
+<script>
+    document.getElementById('title-header').addEventListener('keyup', (evt) => {
+        if (evt.key != 'Tab' && evt.key != 'Enter') {
+            document.getElementById('projectName').value = document.getElementById('title-header').innerHTML.trim();
+        }
+
+        if(evt.key == 'Enter') {
+            document.getElementById("project-form").submit();
+        }
+    });
+</script>

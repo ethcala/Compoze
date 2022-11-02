@@ -9247,6 +9247,11 @@ button {
   flex-basis: 1;
 }
 
+.no-form-style {
+  background-color: none;
+  padding: 0;
+}
+
 .background-darker {
   background-color: rgb(28, 7, 102);
 }

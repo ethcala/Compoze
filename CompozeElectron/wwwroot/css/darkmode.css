@@ -30,3 +30,7 @@ h1,h2,h3,h4,h5,h6,p,a,label {
 {
     border-color: white;
 }
+
+.modal-content {
+    background-color: rgb(27, 27, 27);
+}

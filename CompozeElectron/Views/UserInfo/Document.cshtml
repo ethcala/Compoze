@@ -35,7 +35,7 @@
         <h3 class="border-bottom">Delete</h3>
         <p>Are you sure you want to delete this document?</p>
         <div class="row">
-            <form class="border-none" asp-controller="UserInfo" asp-action="DeleteDocument" method="post">
+            <form class="border-none no-form-style" asp-controller="UserInfo" asp-action="DeleteDocument" method="post">
                 <input type="hidden" value="@document.DocumentId" name="docId"/>
                 <input type="submit" value="Yes" />
             </form>
