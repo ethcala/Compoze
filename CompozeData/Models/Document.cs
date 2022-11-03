@@ -12,5 +12,6 @@ namespace CompozeData.Models
         public string DocumentName { get; set; }
         public string DocumentContent { get; set; }
         public string DocumentCategory { get; set; }
+        public string[] DocumentNotes { get; set; }
     }
 }
