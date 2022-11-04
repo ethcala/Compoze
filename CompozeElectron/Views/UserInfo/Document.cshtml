@@ -5,12 +5,12 @@
     ViewData["Title"] = document.DocumentName;
 }
 
-<div class="background-l-grey stack-sm row mt-2">
-    <div class="col-12 pt-1 border-round background-lighter dashboard-box">
+<div class="background-l-grey stack-sm row mt-2 stack-sm">
+    <div class="col-7 pt-1 border-round background-lighter dashboard-box">
         <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
         <h2 contenteditable="true" class="center-x" id="title-header">@ViewData["Title"]</h2>
         <div class="p-0 stack">
-            <form id="document-form" class="w-60 m-auto border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
+            <form id="document-form" class="w-100 m-0 border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
                 <div class="stack">
                     <input type="hidden" value="@document.DocumentId" name="documentId"/>
                     <input type="hidden" value="@document.ProjectId" name="projectId"/>
@@ -23,9 +23,30 @@
             </form>
             <div class="button-red px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
             <p>@ViewBag.EditedMessage</p>
-            @* <p>Characters: @document.DocumentContent.Length</p>
-            <p>Words: @document.DocumentContent.Split(" ").Length</p> *@
+            <p>Characters: @document.DocumentContent.Length</p>
+            <p>Words: @document.DocumentContent.Split(" ").Length</p>
         </div>
+    </div>
+    <div class="stack col-5">
+        <h2>Notes</h2>
+        <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
+            <form class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="CreateNote" method="post">
+                <input type="hidden" value="@document.DocumentId" name="documentId" />
+                <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" name="newNote" />
+                <input type="submit" class="fancybutton h-40" value="+ New Note" />
+            </form>
+        </div>
+        @foreach(String note in document.DocumentNotes)
+        {
+        <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
+            <form class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="UpdateNote" method="post">
+                <input type="hidden" value="@document.DocumentId" name="documentId" />
+                <input type="hidden" name="originalNote" value="@note" />
+                <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" value="@note" name="updatedNote" />
+                <input type="submit" class="fancybutton h-40" value="Update Note" />
+            </form>
+        </div>
+        }
     </div>
 </div>
 

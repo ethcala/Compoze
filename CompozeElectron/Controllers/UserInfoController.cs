@@ -218,6 +218,10 @@ public class UserInfoController : Controller
         ViewBag.Dal = dal;
         
         Document doc = dal.GetDocumentById(documentId);
+        if(doc.DocumentNotes == null)
+        {
+            doc.DocumentNotes = new List<string>();
+        }
         ViewBag.ThisDocument = doc;
         
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
@@ -262,6 +266,34 @@ public class UserInfoController : Controller
         string projId = dal.GetDocumentById(docId).ProjectId;
         dal.DeleteDocument(docId);
         return RedirectToAction("Project", new {projectId = projId});
+    }
+
+    [HttpPost]
+    public IActionResult CreateNote(string documentId, string newNote)
+    {
+        Document doc = dal.GetDocumentById(documentId);
+        if(doc.DocumentNotes == null)
+        {
+            doc.DocumentNotes = new List<string>();
+        }
+        doc.DocumentNotes.Add(newNote);
+        dal.UpdateDocument(documentId, doc);
+        return RedirectToAction("Document", new {documentId = documentId});
+    }
+
+    [HttpPost]
+    public IActionResult UpdateNote(string documentId, string originalNote, string updatedNote)
+    {
+        Document doc = dal.GetDocumentById(documentId);
+        for (int i = 0; i < doc.DocumentNotes.Count; i++)
+        {
+            if(doc.DocumentNotes[i] == originalNote)
+            {
+                doc.DocumentNotes[i] = updatedNote;
+            }
+        }
+        dal.UpdateDocument(documentId, doc);
+        return RedirectToAction("Document", new {documentId = documentId});
     }
 
     [HttpPost]
