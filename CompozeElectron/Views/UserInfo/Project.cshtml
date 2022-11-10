@@ -48,14 +48,17 @@
         {
             @foreach(string cat in project.Categories.Split("[=]"))
             {
-                <form id="form-@cat" class="no-form-style" method="post" asp-controller="UserInfo" asp-action="UpdateCategoryName">
+                <form id="form-@cat" class="no-form-style hide" method="post" asp-controller="UserInfo" asp-action="UpdateCategoryName">
                     <input type="hidden" value="@project.ProjectId" id="projectId" name="projectId" />
                     <input type="hidden" value="@project.Categories" id="projectCategories" name="projectCategories" />
                     <input type="hidden" value="@cat" id="oldName" name="oldName" />
                     <input type="hidden" value="@cat" id="updatedName-@cat" class="updatedName" name="updatedName" />
                 </form>
-                <div class="border-all">
-                    <h3 contenteditable="true" class="category-header" id="category-header-@cat">@cat</h3>
+                <div class="border-all category-holder" id="@cat-holder">
+                    <div class="row">
+                        <h3 contenteditable="true" class="category-header" id="category-header-@cat">@cat</h3>
+                        <div class="x-button hide delete-category" id="@cat-del">X</div>
+                    </div>
                     @if(documents.Count > 0)
                     {
                         <div class="grid-3x3">
@@ -173,4 +176,17 @@
             document.getElementById("project-form").submit();
         }
     });
+
+    const categoryHolders = [...document.getElementsByClassName('category-holder')];
+    categoryHolders.forEach(elem => {
+        elem.addEventListener('mouseover', (evt) => {
+            let lookingId = elem.id.split('-')[0] + '-del';
+            document.getElementById(lookingId).style.display = "block";
+        });
+
+        elem.addEventListener('mouseout', (evt) => {
+            let lookingId = elem.id.split('-')[0] + '-del';
+            document.getElementById(lookingId).style.display = "none";
+        });
+    })
 </script>

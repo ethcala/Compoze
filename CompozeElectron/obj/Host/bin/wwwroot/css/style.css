@@ -10754,6 +10754,10 @@ ol > li {
   height: 40px;
 }
 
+.hide {
+  display: none;
+}
+
 html {
   background-color: rgb(241, 241, 241);
   color: rgb(28, 7, 102);

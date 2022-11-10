@@ -1,0 +1,15 @@
+@using CompozeData.Models
+@{
+    string search = ViewBag.Search;
+    ProjectListViewModel model = ViewBag.ProjectListModel;
+    List<Document> documents = ViewBag.DocumentListModel.Documents;
+    ViewData["Title"] = "Search Results";
+}
+
+<div class="background-l-grey stack-sm row mt-2">
+    @Html.Partial("_ProjectList", model)
+    <div class="col-9 border-round background-lighter dashboard-box">
+        <div class="p-0 stack">
+        </div>
+    </div>
+</div>
