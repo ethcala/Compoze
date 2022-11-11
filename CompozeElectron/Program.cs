@@ -66,6 +66,7 @@ async void CreateElectronWindow()
         Title = "Compoze"
     };
     var window = await Electron.WindowManager.CreateWindowAsync(options);
+    window.Maximize();
     window.OnClosed += () => Electron.App.Quit();
 }
 
