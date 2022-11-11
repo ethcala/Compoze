@@ -55,9 +55,14 @@
                     <input type="hidden" value="@cat" id="updatedName-@cat" class="updatedName" name="updatedName" />
                 </form>
                 <div class="border-all category-holder" id="@cat-holder">
-                    <div class="row">
+                    <div class="row space-between">
                         <h3 contenteditable="true" class="category-header" id="category-header-@cat">@cat</h3>
-                        <div class="x-button hide delete-category" id="@cat-del">X</div>
+                        <form class="no-form-style w-30 h-30" method="post" asp-controller="UserInfo" asp-action="DeleteCategory">
+                            <input type="hidden" value="@project.ProjectId" name="projectId" />
+                            <input type="hidden" value="@project.Categories" name="projectCategories" />
+                            <input type="hidden" value="@cat" name="deletedName" />
+                            <input type="submit" class="x-button hide delete-category" id="@cat-del" value="X" />
+                        </form>
                     </div>
                     @if(documents.Count > 0)
                     {

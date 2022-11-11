@@ -225,6 +225,10 @@ table {
   width: 100% !important;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .square-sm {
   width: 50px;
   height: 50px;
@@ -1339,6 +1343,10 @@ ol > li {
   width: 100% !important;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .square-sm {
   width: 50px;
   height: 50px;
@@ -2311,6 +2319,10 @@ ol > li {
 
 .w-100 {
   width: 100% !important;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .square-sm {
@@ -3472,6 +3484,10 @@ ol > li {
   width: 100% !important;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .square-sm {
   width: 50px;
   height: 50px;
@@ -4598,6 +4614,10 @@ ol > li {
   width: 100% !important;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .square-sm {
   width: 50px;
   height: 50px;
@@ -5673,6 +5693,10 @@ ol > li {
 
 .w-100 {
   width: 100% !important;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .square-sm {
@@ -7158,6 +7182,10 @@ ol > li {
   width: 100% !important;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .square-sm {
   width: 50px;
   height: 50px;
@@ -8199,6 +8227,10 @@ table.bold-top tr:first-child {
 
 .w-100 {
   width: 100% !important;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .square-sm {
@@ -9249,7 +9281,9 @@ button {
 
 .no-form-style {
   background: none;
+  background-color: none;
   padding: 0;
+  border: none;
 }
 .no-form-style > * {
   margin: 0;
@@ -9422,6 +9456,10 @@ button {
 
 .w-100 {
   width: 100% !important;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .square-sm {
@@ -10756,6 +10794,14 @@ ol > li {
 
 .hide {
   display: none;
+}
+
+.w-30 {
+  width: 30px;
+}
+
+.h-30 {
+  height: 30px;
 }
 
 html {

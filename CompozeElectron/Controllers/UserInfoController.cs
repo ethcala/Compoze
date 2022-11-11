@@ -178,6 +178,9 @@ public class UserInfoController : Controller
     public IActionResult CreateCategory(string projectId, string category)
     {
         Project updated = dal.GetProjectById(projectId);
+
+        Console.WriteLine(updated.Categories);
+
         if(updated.Categories == null || updated.Categories == "")
         {
             updated.Categories = category;
@@ -269,7 +272,7 @@ public class UserInfoController : Controller
     }
 
     [HttpPost]
-    public IActionResult CreateNote(string documentId, string newNote)
+    public IActionResult CreateNote(string documentId, string newNote, string documentContent)
     {
         Document doc = dal.GetDocumentById(documentId);
         if(doc.DocumentNotes == null)
@@ -277,12 +280,13 @@ public class UserInfoController : Controller
             doc.DocumentNotes = new List<string>();
         }
         doc.DocumentNotes.Add(newNote);
+        doc.DocumentContent = documentContent;
         dal.UpdateDocument(documentId, doc);
         return RedirectToAction("Document", new {documentId = documentId});
     }
 
     [HttpPost]
-    public IActionResult UpdateNote(string documentId, string originalNote, string updatedNote)
+    public IActionResult UpdateNote(string documentId, string originalNote, string updatedNote, string documentContent)
     {
         Document doc = dal.GetDocumentById(documentId);
         for (int i = 0; i < doc.DocumentNotes.Count; i++)
@@ -292,8 +296,31 @@ public class UserInfoController : Controller
                 doc.DocumentNotes[i] = updatedNote;
             }
         }
+        doc.DocumentContent = documentContent;
+
         dal.UpdateDocument(documentId, doc);
         return RedirectToAction("Document", new {documentId = documentId});
+    }
+
+    [HttpPost]
+    public IActionResult DeleteCategory(string projectId, string deletedName, string projectCategories)
+    {
+        if(projectCategories.StartsWith(deletedName))
+        {
+            projectCategories = projectCategories.Remove(0, deletedName.Length+3);
+        } else {
+            int index = projectCategories.IndexOf(projectCategories);
+            int startInd = index - 3;
+            int endInd = index + deletedName.Length - 1;
+            projectCategories = projectCategories.Remove(startInd, endInd);
+        }
+
+        Project proj = dal.GetProjectById(projectId);
+        proj.Categories = projectCategories;
+
+        dal.UpdateProject(projectId, proj);
+
+        return RedirectToAction("Project", new {projectId = projectId});
     }
 
     [HttpPost]

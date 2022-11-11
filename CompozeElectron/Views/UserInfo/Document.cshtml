@@ -23,29 +23,33 @@
             </form>
             <div class="button-red px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
             <p>@ViewBag.EditedMessage</p>
-            <p>Characters: @document.DocumentContent.Length</p>
-            <p>Words: @document.DocumentContent.Split(" ").Length</p>
+            @if(document.DocumentContent != null && document.DocumentContent != "") {
+                <p>Characters: @document.DocumentContent.Length</p>
+                <p>Words: @document.DocumentContent.Split(" ").Length</p>
+            }
         </div>
     </div>
     <div class="stack col-5">
         <h2>Notes</h2>
-        <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
-            <form class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="CreateNote" method="post">
+        <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto stack">
+            <form id="create-note-form" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="CreateNote" method="post">
                 <input type="hidden" value="@document.DocumentId" name="documentId" />
+                <input type="hidden" value="" name="documentContent" id="create-docContent" />
                 <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" name="newNote" />
-                <input type="submit" class="fancybutton h-40" value="+ New Note" />
             </form>
+            <div class="fancybutton h-40" id="create-note-submit">+ New Note</div>
         </div>
-        @foreach(String note in document.DocumentNotes)
+        @for(int i = 0; i < document.DocumentNotes.Count; i++) 
         {
-        <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
-            <form class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="UpdateNote" method="post">
-                <input type="hidden" value="@document.DocumentId" name="documentId" />
-                <input type="hidden" name="originalNote" value="@note" />
-                <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" value="@note" name="updatedNote" />
-                <input type="submit" class="fancybutton h-40" value="Update Note" />
-            </form>
-        </div>
+            <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
+                <form id="update-note-form-@i" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="UpdateNote" method="post">
+                    <input type="hidden" value="@document.DocumentId" name="documentId" />
+                    <input type="hidden" value="" name="documentContent" id="update-docContent-@i" />
+                    <input type="hidden" name="originalNote" value="@document.DocumentNotes[i]" />
+                    <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" value="@document.DocumentNotes[i]" name="updatedNote" />
+                </form>
+                <div class="fancybutton h-40 update-note-submit" id="submit-@i">Update Note</div>
+            </div>
         }
     </div>
 </div>
@@ -130,5 +134,20 @@
         if(evt.key == 'Enter') {
             document.getElementById("document-form").submit();
         }
+    });
+
+    const updateSubmits = [...document.getElementsByClassName('update-note-submit')];
+
+    updateSubmits.forEach(elem => {
+        elem.addEventListener('click', evt => {
+            let count = elem.id.split('-')[1];
+            document.getElementById('update-docContent-' + count).value = contentDiv.innerHTML;
+            document.getElementById('update-note-form-' + count).submit();
+        })
+    });
+
+    document.getElementById('create-note-submit').addEventListener('click', evt => {
+        document.getElementById('create-docContent').value = contentDiv.innerHTML;
+        document.getElementById('create-note-form').submit();
     });
 </script>

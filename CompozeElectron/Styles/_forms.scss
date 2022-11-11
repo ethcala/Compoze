@@ -83,7 +83,9 @@ button {
 
 .no-form-style {
     background: none;
+    background-color: none;
     padding: 0;
+    border: none;
     >* {
         margin: 0;
         height: 90%;
