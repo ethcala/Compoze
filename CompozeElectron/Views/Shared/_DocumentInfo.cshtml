@@ -3,13 +3,13 @@
     string categories = ViewBag.Categories;
 }
 
-<div class="docinfo square border-all">
+<div class="docinfo square border-all center-x stack">
     @if(Model.DocumentName != null && Model.DocumentName != "") {
-        <p><strong><a href="~/UserInfo/Document/@Model.DocumentId">@Model.DocumentName</a></strong></p>
+        <p class="m-0"><strong><a href="~/UserInfo/Document/@Model.DocumentId">@Model.DocumentName</a></strong></p>
     } else {
-        <p><strong><a href="~/UserInfo/Document/@Model.DocumentId">Unnamed</a></strong></p>
+        <p class="m-0"><strong><a href="~/UserInfo/Document/@Model.DocumentId">Unnamed</a></strong></p>
     }
-    <div class="smallbtn fancybutton" onclick="openModal('move-modal')">Move</div>
+    <div class="smallbtn fancybutton m-0" onclick="openModal('move-modal')">Move</div>
 </div>
 
 <div id="move-modal" class="modal m-middle">

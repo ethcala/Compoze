@@ -12,7 +12,7 @@
         <h2>@ViewData["Title"]</h2>
         @if(lastProject != null && lastProject.ProjectName != null && lastProject.ProjectName != "")
         {
-            <p>Last Edited: @lastProject.ProjectName</p>
+            <p>Last Edited: <a href="/UserInfo/Project/@lastProject.ProjectId">@lastProject.ProjectName</a></p>
         } else {
             <p>Last Edited: None</p>
         }
