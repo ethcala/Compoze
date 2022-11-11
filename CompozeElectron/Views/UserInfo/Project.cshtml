@@ -2,10 +2,12 @@
 @{
     Project project = ViewBag.ThisProject;
     ProjectListViewModel model = ViewBag.ProjectListModel;
-    List<Document> documents = ViewBag.DocumentListModel.Documents;
+    List<Document> documents = ViewBag.DocumentListViewModel.Documents;
     List<Template> templates = ViewBag.TemplateListModel.Templates;
     ViewData["Title"] = project.ProjectName;
     List<Document> undoneDocs = documents;
+
+    ViewBag.SearchMode = false;
 
     ViewBag.Categories = project.Categories;
 }
@@ -89,7 +91,6 @@
                             @Html.Partial("_DocumentInfo", doc);
                         }
                         </div>
-                    }
                 </div>
             }
             <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>

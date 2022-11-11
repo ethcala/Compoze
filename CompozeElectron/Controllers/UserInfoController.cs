@@ -18,14 +18,28 @@ public class UserInfoController : Controller
         this.dal = dal;
     }
     [Authorize]
-    public IActionResult Dashboard() 
+    // public IActionResult Dashboard(bool searchMode = false, ProjectListViewModel model = null, DocumentListViewModel docs = null) 
+    public IActionResult Dashboard(bool searchMode, string search) 
     {
         ViewBag.Dal = dal;
+        ViewBag.SearchMode = searchMode;
 
-        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         ProjectListViewModel model = new ProjectListViewModel();
-        model.Projects = dal.GetUserProjects(userId);
-        ViewBag.ProjectListModel = model;
+        DocumentListViewModel documents = new DocumentListViewModel();
+            
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+
+        if(!searchMode)
+        {
+            model = new ProjectListViewModel();
+            model.Projects = dal.GetUserProjects(userId);
+        } else
+        {
+            List<object>[] lists = dal.SearchDocuments(search, userId);
+
+            model.Projects = lists[0].Cast<Project>().ToList();
+            documents.Documents = lists[1].Cast<Document>().ToList();
+        }
 
         if(model.Projects.Count > 0)
         {
@@ -33,6 +47,9 @@ public class UserInfoController : Controller
             Project latestProj = dal.GetProjectById(latestId);
             ViewBag.LastProject = latestProj;
         }
+            
+        ViewBag.ProjectListModel = model;
+        ViewBag.DocumentListViewModel = documents;
 
         return View(model);
     }
@@ -151,7 +168,7 @@ public class UserInfoController : Controller
 
         DocumentListViewModel docModel = new DocumentListViewModel();
         docModel.Documents = dal.GetDocumentsByProjectId(projectId);
-        ViewBag.DocumentListModel = docModel;
+        ViewBag.DocumentListViewModel = docModel;
 
         TemplateListViewModel templateModel = new TemplateListViewModel();
         templateModel.Templates.AddRange(dal.GetDefaultTemplates());
@@ -172,7 +189,7 @@ public class UserInfoController : Controller
     public IActionResult DeleteProject(string projId)
     {
         dal.DeleteProject(projId);
-        return Redirect("Dashboard");
+        return RedirectToAction("Dashboard", new {searchMode = false, search = ""});
     }
     [HttpPost]
     public IActionResult CreateCategory(string projectId, string category)
@@ -353,5 +370,21 @@ public class UserInfoController : Controller
         dal.UpdateCategoryName(projectId, newCategories);
 
         return RedirectToAction("Project", new {projectId = projectId});
+    }
+
+    [HttpPost]
+    public IActionResult SearchDocuments(string search)
+    {
+        // string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        // List<object>[] lists = dal.SearchDocuments(search, userId);
+
+        // ProjectListViewModel projects = new ProjectListViewModel();
+        // projects.Projects = lists[0].Cast<Project>().ToList();
+
+        // DocumentListViewModel documents = new DocumentListViewModel();
+        // documents.Documents = lists[1].Cast<Document>().ToList();
+
+        // Console.WriteLine(documents.Documents[0]);
+        return RedirectToAction("Dashboard", new {searchMode = true, search = search});
     }
 }

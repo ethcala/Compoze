@@ -2,17 +2,47 @@
 @model ProjectListViewModel;
 @{
     Model.Projects = Model.Projects.OrderByDescending(p=>p.EditDate).ToList();
+    bool searchMode = ViewBag.SearchMode;
+    List<Document> documentList = ViewBag.DocumentListViewModel.Documents;
 }
 
-<div class="col-3 border-round background-lighter dashboard-box h-auto-sm">
-    <h6 class="txt-font-basic"><a class="no-deco" href="/UserInfo/Dashboard">Projects</a></h6>
-    @if(Model.Projects != null && Model.Projects.Count > 0) 
-    {
-        @foreach(Project p in Model.Projects)
+<div class="col-3 border-round background-lighter dashboard-box h-auto-sm stack space-between">
+    <div class="p-0 m-0">
+        @if(!searchMode)
         {
-            <p class="project-name"><a class="no-deco" href="/UserInfo/Project/@p.ProjectId">↳ @p.ProjectName</a></p>
+            <h6 class="txt-font-basic"><a class="no-deco" href="/UserInfo/Dashboard">Projects</a></h6>
+            @if(Model.Projects != null && Model.Projects.Count > 0) 
+            {
+                @foreach(Project p in Model.Projects)
+                {
+                    <p class="project-name"><a class="no-deco" href="/UserInfo/Project/@p.ProjectId">↳ @p.ProjectName</a></p>
+                }
+            } else {
+                <p class="project-name">↳ No Projects Found</p>
+            }
+        } else
+        {
+            <h6 class="txt-font-basic"><a class="no-deco" href="/UserInfo/Dashboard">Results</a></h6>
+            @if(Model.Projects != null && Model.Projects.Count > 0) 
+            {
+                @foreach(Project p in Model.Projects)
+                {
+                    <p class="project-name"><a class="no-deco" href="/UserInfo/Project/@p.ProjectId">@p.ProjectName</a></p>
+                    @foreach(Document d in documentList)
+                    {
+                        @if(d.ProjectId == p.ProjectId)
+                        {
+                            <p class="project-name"><a class="no-deco" href="/UserInfo/Document/@d.DocumentId">&nbsp;↳ @d.DocumentName</a></p>
+                        }
+                    }
+                }
+            } else {
+                <p class="project-name">↳ No Matches Found</p>
+            }
         }
-    } else {
-        <p class="project-name">↳ No Projects Found</p>
-    }
+    </div>
+    <form class="no-form-style row space-between center-y w-100" method="post" asp-controller="UserInfo" asp-action="SearchDocuments">
+        <input class="m-0" type="text" name="search" />
+        <input class="w-60" type="submit" value="Search" />
+    </form>
 </div>

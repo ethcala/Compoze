@@ -7,7 +7,7 @@
 }
 
 <div class="background-l-grey stack-sm row mt-2">
-    @Html.Partial("_ProjectList", model)
+    @Html.Partial("_ProjectList", model);
     <div class="col-9 border-round background-lighter dashboard-box">
         <h2>@ViewData["Title"]</h2>
         @if(lastProject != null && lastProject.ProjectName != null && lastProject.ProjectName != "")

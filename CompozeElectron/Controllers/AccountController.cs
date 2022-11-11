@@ -10,7 +10,7 @@ using ElectronNET.API.Entities;
 
 public class AccountController : Controller
 {
-    public async Task Login(string returnUrl = "UserInfo/Dashboard") 
+    public async Task Login(string returnUrl = "UserInfo/Dashboard?searchMode=false&search=none") 
     {
         var authProperties = new LoginAuthenticationPropertiesBuilder()
             .WithRedirectUri(returnUrl)

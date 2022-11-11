@@ -90,6 +90,33 @@ public class CompozeService
         return darkMode;
     }
 
+    // misc methods
+    public List<object>[] SearchDocuments(string search, string userId)
+    {
+        // get all documents to search
+        List<Project> allProjects = GetUserProjects(userId);
+        List<Document> allDocuments = new List<Document>();
+        allProjects.ForEach(p => allDocuments.AddRange(GetDocumentsByProjectId(p.ProjectId)));
+
+        List<Project> searchProjects = new List<Project>();
+        List<Document> searchDocuments = new List<Document>();
+        allDocuments.ForEach(d => {
+            if(d.DocumentContent.Contains(search))
+            {
+                searchDocuments.Add(d);
+                allProjects.ForEach(p => {
+                    if(p.ProjectId == d.ProjectId && !searchProjects.Contains(p))
+                    {
+                        searchProjects.Add(p);
+                    }
+                });
+            }
+        });
+
+        List<object>[] lists = new List<object>[] { searchProjects.Cast<object>().ToList(), searchDocuments.Cast<object>().ToList() };
+        return lists;
+    }
+
     // Other
 
     // Get Methods
