@@ -7,7 +7,14 @@
 
 <div class="background-l-grey stack-sm row mt-2 stack-sm">
     <div class="col-7 pt-1 border-round background-lighter dashboard-box">
-        <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
+        <div class="row center-x">
+            <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
+            <form class="no-form-style row" id="wordcount-form">
+                <label for="word-goal">Word Goal:</label>
+                <input type="number" id="word-goal" name="word-goal" />
+                <input type="submit" value="✓" id="wordcount-submit"/>
+            </form>
+        </div>
         <h2 contenteditable="true" class="center-x" id="title-header">@ViewData["Title"]</h2>
         <div class="p-0 stack">
             <form id="document-form" class="w-100 m-0 border-none p-0" asp-controller="UserInfo" asp-action="EditDocument" method="post">
@@ -27,6 +34,7 @@
                 <p>Characters: @document.DocumentContent.Length</p>
                 <p>Words: @document.DocumentContent.Split(" ").Length</p>
             }
+            <p class="hide" id="word-goal-display">Word Goal: </p>
         </div>
     </div>
     <div class="stack col-5">
@@ -80,14 +88,29 @@
 </div>
 
 <script>
-    let keysPressed = {};
+    let keysPressedHere = {};
 
     let contentDiv = document.getElementById('text-editor');
     let originalContent = contentDiv.innerHTML;
+    let wordGoal = 0;
 
     document.getElementById('close-search').addEventListener('click', (evt) => {
         contentDiv.innerHTML = originalContent;
         document.getElementById('search').style.display = 'none';
+    });
+
+    const updateWordGoal = () => {
+        document.getElementById('word-goal-display').innerHTML = `Word Goal: ${wordGoal}`;
+        document.getElementById('word-goal-display').style.display = 'block';
+    }
+
+    document.getElementById('wordcount-submit').addEventListener('click', evt => {
+        evt.preventDefault();
+        let wordVal = document.getElementById('word-goal').value;
+        if(wordVal > 0 && wordVal > contentDiv.innerHTML.length) {
+            wordGoal = wordVal;
+            updateWordGoal();
+        }
     });
 
     window.onclick = function(event) {
@@ -98,22 +121,22 @@
     }
 
     document.addEventListener('keydown', (event) => {
-        keysPressed[event.key] = true;
+        keysPressedHere[event.key] = true;
 
-        if (keysPressed['Control'] && event.key == 's') {
+        if (keysPressedHere['Control'] && event.key == 's') {
             document.getElementById("document-form").submit();
-            keysPressed['Control'] = false;
+            keysPressedHere['Control'] = false;
         }
 
-        if (keysPressed['Control'] && event.key == 'f') {
+        if (keysPressedHere['Control'] && event.key == 'f') {
             originalContent = contentDiv.innerHTML;
             document.getElementById('search').style.display = 'block';
-            keysPressed['Control'] = false;
+            keysPressedHere['Control'] = false;
         }
     });
 
     document.addEventListener('keyup', (event) => {
-        keysPressed[event.key] = false;
+        keysPressedHere[event.key] = false;
     });
 
     document.getElementById('search-input').addEventListener('input', (evt) => {
