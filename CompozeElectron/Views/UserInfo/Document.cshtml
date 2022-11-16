@@ -118,7 +118,6 @@
 
     document.getElementById('search-input').addEventListener('input', (evt) => {
         const reg = new RegExp(document.getElementById('search-input').value, 'g');
-        console.log(reg);
         contentDiv.innerHTML = originalContent.replace(reg, `<span class="highlight">${document.getElementById('search-input').value}</span>`);
     });
 

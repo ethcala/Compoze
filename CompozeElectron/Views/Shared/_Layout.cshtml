@@ -52,6 +52,18 @@
         </main>
     </div>
 
+    <div id="search" class="modal noblackout">
+        <div class="modal-content">
+            <span class="close button-x" id="close-search">X</span>
+            <div class="row">
+                <form class="no-form-style" method="post" asp-controller="UserInfo" asp-action="SearchDocuments" id="search-form">
+                    <label for="search-input">Search All: </label>
+                    <input type="text" id="search-input" name="search" />
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
@@ -75,5 +87,39 @@
         for(let r of recols) {
             r.style.borderColor = "@color";
         }
+
+
+        let keysPressed = {};
+
+        document.getElementById('close-search').addEventListener('click', (evt) => {
+            document.getElementById('search').style.display = 'none';
+        });
+
+        window.onclick = function(event) {
+            if (event.target.id == 'search') {
+                event.target.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('keydown', (event) => {
+            keysPressed[event.key] = true;
+            console.log(keysPressed['Control'] + ' ' + keysPressed['Shift'] + ' ' + event.key);
+
+            if (event.ctrlKey && event.shiftKey && event.key == 'F') {
+                document.getElementById('search').style.display = 'block';
+                keysPressed['Control'] = false;
+                keysPressed['Shift'] = false;
+            }
+        });
+
+        document.addEventListener('keyup', (event) => {
+            keysPressed[event.key] = false;
+        });
+
+        document.getElementById('search-input').addEventListener('input', (evt) => {
+            if(evt.key == 'Enter') {
+                document.getElementById('search-form').submit();
+            }
+        });
     </script>
 </html>

@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input type="submit" value="Update" class="mt-2 mb-1" />
+                    <input type="submit" value="Update" class="fancybutton px-2 mt-2 mb-1" />
                     <div class="fancybutton px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
                 </div>
             </form>
@@ -167,6 +167,11 @@
             }
 
             if(evt.key == 'Enter') {
+                const regex = /<.*>/gm;
+                if(header.innerHTML.match(regex)) {
+                    header.innerHTML = header.innerHTML.substring(0, header.innerHTML.indexOf("<"));
+                    document.getElementById(`updatedName-${thisOriginal}`).value = header.innerHTML;
+                }
                 document.getElementById(`form-${thisOriginal}`).submit();
             }
         })
