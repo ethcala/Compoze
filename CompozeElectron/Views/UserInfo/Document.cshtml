@@ -2,6 +2,7 @@
 @{
     Document document = ViewBag.ThisDocument;
     ProjectListViewModel model = ViewBag.ProjectListModel;
+    bool oneNote = ViewBag.OneNoteOnly;
     ViewData["Title"] = document.DocumentName;
 }
 
@@ -9,10 +10,10 @@
     <div class="col-7 pt-1 border-round background-lighter dashboard-box">
         <div class="row center-x">
             <a class="m-auto ml-3 mt-1" href="/UserInfo/Project/@document.ProjectId">Back to Project</a>
-            <form class="no-form-style row" id="wordcount-form">
-                <label for="word-goal">Word Goal:</label>
-                <input type="number" id="word-goal" name="word-goal" />
-                <input type="submit" value="✓" id="wordcount-submit"/>
+            <form class="no-form-style row center-y" id="wordcount-form">
+                <label class="h-30" for="word-goal">Word Goal:</label>
+                <input class="h-30" type="number" id="word-goal" name="word-goal" />
+                <input class="h-40" type="submit" value="✓" id="wordcount-submit"/>
             </form>
         </div>
         <h2 contenteditable="true" class="center-x" id="title-header">@ViewData["Title"]</h2>
@@ -28,6 +29,7 @@
                 </div>
                 <input type="submit" value="Save" class="mt-2 mb-1" />
             </form>
+            <button class="fancybutton" onclick="openModal('template-modal')">Create Template</button>
             <div class="button-red px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
             <p>@ViewBag.EditedMessage</p>
             @if(document.DocumentContent != null && document.DocumentContent != "") {
@@ -39,26 +41,49 @@
     </div>
     <div class="stack col-5">
         <h2>Notes</h2>
-        <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto stack">
-            <form id="create-note-form" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="CreateNote" method="post">
-                <input type="hidden" value="@document.DocumentId" name="documentId" />
-                <input type="hidden" value="" name="documentContent" id="create-docContent" />
-                <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" name="newNote" />
-            </form>
-            <div class="fancybutton h-40" id="create-note-submit">+ New Note</div>
-        </div>
-        @for(int i = 0; i < document.DocumentNotes.Count; i++) 
-        {
-            <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
-                <form id="update-note-form-@i" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="UpdateNote" method="post">
+        @* @if(!oneNote)
+        { *@
+            <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto stack">
+                <form id="create-note-form" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="CreateNote" method="post">
                     <input type="hidden" value="@document.DocumentId" name="documentId" />
-                    <input type="hidden" value="" name="documentContent" id="update-docContent-@i" />
-                    <input type="hidden" name="originalNote" value="@document.DocumentNotes[i]" />
-                    <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" value="@document.DocumentNotes[i]" name="updatedNote" />
+                    <input type="hidden" value="" name="documentContent" id="create-docContent" />
+                    <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" name="newNote" />
                 </form>
-                <div class="fancybutton h-40 update-note-submit" id="submit-@i">Update Note</div>
+                <div class="fancybutton h-40" id="create-note-submit">+ New Note</div>
             </div>
-        }
+            @for(int i = 0; i < document.DocumentNotes.Count; i++) 
+            {
+                <div class="border-round background-lighter center-x w-90 p-1 pr-2 h-auto">
+                    <form id="update-note-form-@i" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="UpdateNote" method="post">
+                        <input type="hidden" value="@document.DocumentId" name="documentId" />
+                        <input type="hidden" value="" name="documentContent" id="update-docContent-@i" />
+                        <input type="hidden" name="originalNote" value="@document.DocumentNotes[i]" />
+                        <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" value="@document.DocumentNotes[i]" name="updatedNote" />
+                    </form>
+                    <div class="fancybutton h-40 update-note-submit" id="submit-@i">Update Note</div>
+                </div>
+            }
+        @* } *@
+        
+    </div>
+</div>
+
+<div id="template-modal" class="modal m-middle">
+    <div class="modal-content">
+        <span class="x-button close" onclick="closeModal('del-modal')">X</span>
+        <h3 class="border-bottom">Create Template</h3>
+        <p>Please enter more details about this template. Make sure to save your document first.</p>
+        <form asp-controller="UserInfo" asp-action="CreateTemplate" method="post">
+            <input type="hidden" value="@document.DocumentId" name="documentId"/>
+            <label for="templateName">Name: </label>
+            <input type="text" value="" name="templateName" />
+            <label for="templateCategory">Category: </label>
+            <input type="text" value="" name="templateCategory" />
+            <input type="hidden" value="@document.DocumentContent" name="templateContent" />
+            <input type="submit" value="Create" />
+        </form>
+        <button class="fancybutton" onclick="closeModal('template-modal')">Cancel</button>
+        </div>
     </div>
 </div>
 
@@ -125,6 +150,11 @@
 
         if (keysPressedHere['Control'] && event.key == 's') {
             document.getElementById("document-form").submit();
+            keysPressedHere['Control'] = false;
+        }
+
+        if (keysPressedHere['Control'] && event.key == 't') {
+            openModal('template-modal');
             keysPressedHere['Control'] = false;
         }
 

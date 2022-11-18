@@ -10,5 +10,6 @@ public class UserProfileViewModel
     public string? AuthorName { get; set; }
     public string? ProjectLayout { get; set; }
     public string? CustomColor { get; set; }
+    public bool? OneNoteOnly { get; set; }
 
 }

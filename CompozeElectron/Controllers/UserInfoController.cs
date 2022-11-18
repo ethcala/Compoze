@@ -63,9 +63,15 @@ public class UserInfoController : Controller
         // if no user then create user. if user then get user
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
         User user = dal.GetUser(userId);
+        if(user.OneNoteOnly == null)
+        {
+            user.OneNoteOnly = false;
+            dal.UpdateUser(userId, user);
+        }
+
         if(user == null)
         {
-            user = dal.CreateUser(new User(){UserId = userId, DarkMode = false, AuthorName = "", ProjectLayout = "Chapters", CustomColor = "#1c0766"});
+            user = dal.CreateUser(new User(){UserId = userId, DarkMode = false, AuthorName = "", ProjectLayout = "Chapters", CustomColor = "#1c0766", OneNoteOnly = false});
         }
 
         return View(new UserProfileViewModel()
@@ -76,7 +82,9 @@ public class UserInfoController : Controller
             ProfileImage = User.FindFirst(c => c.Type == "picture")?.Value,
             DarkMode = user.DarkMode,
             AuthorName = user.AuthorName,
-            ProjectLayout = user.ProjectLayout
+            ProjectLayout = user.ProjectLayout,
+            CustomColor = user.CustomColor,
+            OneNoteOnly = user.OneNoteOnly
         });
     }
 
@@ -88,6 +96,7 @@ public class UserInfoController : Controller
         user.AuthorName = model.AuthorName;
         user.ProjectLayout = model.ProjectLayout;
         user.CustomColor = model.CustomColor;
+        user.OneNoteOnly = model.OneNoteOnly;
 
         dal.UpdateUser(model.UserId, user);
 
@@ -245,10 +254,13 @@ public class UserInfoController : Controller
         ViewBag.ThisDocument = doc;
         
         string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        User user = dal.GetUser(userId);
+
         ProjectListViewModel model = new ProjectListViewModel();
         model.Projects = dal.GetUserProjects(userId);
         ViewBag.ProjectListModel = model;
 
+        ViewBag.OneNoteOnly = user.OneNoteOnly;
         ViewBag.EditedMessage = lastEdit;
         ViewBag.DarkMode = dal.DoesUserUseDarkMode(userId);
 
@@ -375,16 +387,16 @@ public class UserInfoController : Controller
     [HttpPost]
     public IActionResult SearchDocuments(string search)
     {
-        // string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
-        // List<object>[] lists = dal.SearchDocuments(search, userId);
-
-        // ProjectListViewModel projects = new ProjectListViewModel();
-        // projects.Projects = lists[0].Cast<Project>().ToList();
-
-        // DocumentListViewModel documents = new DocumentListViewModel();
-        // documents.Documents = lists[1].Cast<Document>().ToList();
-
-        // Console.WriteLine(documents.Documents[0]);
         return RedirectToAction("Dashboard", new {searchMode = true, search = search});
+    }
+
+    [HttpPost]
+    public IActionResult CreateTemplate(string documentId, string templateName, string templateCategory, string templateContent)
+    {
+        string userId = User.FindFirst(c => c.Type == ClaimTypes.NameIdentifier).Value;
+        Template template = new Template() { TemplateName = templateName, TemplateCategory = templateCategory, TemplateContent = templateContent, UserId = userId };
+        dal.CreateTemplate(template);
+
+        return RedirectToAction("Document", new {documentId = documentId});
     }
 }
