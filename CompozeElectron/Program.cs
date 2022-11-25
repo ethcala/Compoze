@@ -81,7 +81,9 @@ void CreateMenu()
         new MenuItem { Label = "Home", 
                                 Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/") },
         new MenuItem { Label = "Privacy", 
-                                Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/Privacy") },
+                                Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/UserInfo/Privacy") },
+        new MenuItem { Label = "Help", 
+                                Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/UserInfo/Help") },
         new MenuItem { Type = MenuType.separator },
         new MenuItem { Role = MenuRole.quit }
     };
