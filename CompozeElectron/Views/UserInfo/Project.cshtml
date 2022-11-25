@@ -79,7 +79,7 @@
                             }
                         </div>
                     }
-                    <div class="button-main px-2 mx-5" onclick="openModalWithCategoryName('newdoc-modal', '@cat')">New Document</div>
+                    <div class="fancybutton px-2 mx-5" onclick="openModalWithCategoryName('newdoc-modal', '@cat')">New Document</div>
                 </div>
             }
             @if(undoneDocs.Count > 0) {
@@ -93,12 +93,12 @@
                         </div>
                 </div>
             }
-            <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
+            <div class="fancybutton px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
         } else {
             <div class="border-all">
                 <h3>No sections found</h3>
                 <p>Create a section to start writing.</p>
-                <div class="button-main px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
+                <div class="fancybutton px-2 mx-5" onclick="openModal('newcat-modal')">New Category</div>
             </div>
         }
     </div>

@@ -40,9 +40,9 @@ public class AccountController : Controller
             new MenuItem { Label = "Home", 
                                     Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/") },
             new MenuItem { Label = "Privacy", 
-                                    Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/UserInfo/Privacy") },
+                                    Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/Home/Privacy") },
             new MenuItem { Label = "Help", 
-                                    Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/UserInfo/Help") },
+                                    Click = () => Electron.WindowManager.BrowserWindows.First().LoadURL($"http://localhost:{BridgeSettings.WebPort}/Home/Help") },
             new MenuItem { Type = MenuType.separator },
             new MenuItem { Role = MenuRole.quit }
         };

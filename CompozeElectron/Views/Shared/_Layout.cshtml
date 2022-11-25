@@ -53,15 +53,15 @@
         </main>
     </div>
 
-    <div id="search" class="modal noblackout">
+    <div id="search-all" class="modal noblackout">
         <div class="modal-content">
-            <span class="close button-x" id="close-search">X</span>
-            <div class="row">
-                <form class="no-form-style" method="post" asp-controller="UserInfo" asp-action="SearchDocuments" id="search-form">
-                    <label for="search-input">Search All: </label>
-                    <input type="text" id="search-input" name="search" />
+            <span class="close button-x" id="close-search-all">X</span>
+                <form class="no-form-style" method="post" asp-controller="UserInfo" asp-action="SearchDocuments" id="search-all-form">
+                    <div class="row">
+                        <label for="search-all-input">Search All: </label>
+                        <input type="text" id="search-all-input" name="search" />
+                    </div>
                 </form>
-            </div>
         </div>
     </div>
 
@@ -92,22 +92,21 @@
 
         let keysPressed = {};
 
-        document.getElementById('close-search').addEventListener('click', (evt) => {
+        document.getElementById('close-search-all').addEventListener('click', (evt) => {
             document.getElementById('search').style.display = 'none';
         });
 
         window.onclick = function(event) {
-            if (event.target.id == 'search') {
+            if (event.target.id == 'search-all') {
                 event.target.style.display = 'none';
             }
         }
 
         document.addEventListener('keydown', (event) => {
             keysPressed[event.key] = true;
-            console.log(keysPressed['Control'] + ' ' + keysPressed['Shift'] + ' ' + event.key);
 
             if (event.ctrlKey && event.shiftKey && event.key == 'F') {
-                document.getElementById('search').style.display = 'block';
+                document.getElementById('search-all').style.display = 'block';
                 keysPressed['Control'] = false;
                 keysPressed['Shift'] = false;
             }
@@ -117,9 +116,9 @@
             keysPressed[event.key] = false;
         });
 
-        document.getElementById('search-input').addEventListener('input', (evt) => {
+        document.getElementById('search-all-input').addEventListener('input', (evt) => {
             if(evt.key == 'Enter') {
-                document.getElementById('search-form').submit();
+                document.getElementById('search-all-form').submit();
             }
         });
     </script>
