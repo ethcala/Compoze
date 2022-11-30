@@ -44,6 +44,7 @@
     border-radius: 5px;
     width: 70%;
     cursor: pointer;
+    text-align: center;
 }
 
 .project-name {
@@ -149,4 +150,16 @@
 
 .h-30 {
     height: 30px;
+}
+
+.matchbuttons {
+    height: auto;
+    width: 150px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.fixbtn {
+    height: 45px;
+    border: none;
 }

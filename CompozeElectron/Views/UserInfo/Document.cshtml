@@ -25,7 +25,7 @@
                     <input type="hidden" value="@document.DocumentName" name="documentName" id="documentName"/>
                     <input type="hidden" value="@document.DocumentContent" name="documentContent" id="documentContent"/>
                     <input type="hidden" value="@document.DocumentCategory" name="documentCategory"/>
-                    <div contenteditable="true" class="txt-font-basic text-editor" id="text-editor">@document.DocumentContent</div>
+                    <div contenteditable="true" class="txt-font-basic text-editor p-2" id="text-editor">@document.DocumentContent</div>
                 </div>
                 <input type="submit" value="Save" class="mt-2 mb-1" />
             </form>
@@ -47,9 +47,9 @@
                 <form id="create-note-form" class="no-form-style w-90 m-1 h-150" asp-controller="UserInfo" asp-action="CreateNote" method="post">
                     <input type="hidden" value="@document.DocumentId" name="documentId" />
                     <input type="hidden" value="" name="documentContent" id="create-docContent" />
-                    <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" name="newNote" />
+                    <input type="textarea" class="textarea border-none mb-1 mh-20 background-l-grey" name="newNote" />
                 </form>
-                <div class="fancybutton h-40" id="create-note-submit">+ New Note</div>
+                <div class="fancybutton h-auto txt-a-center" id="create-note-submit">+ New Note</div>
             </div>
             @for(int i = 0; i < document.DocumentNotes.Count; i++) 
             {
@@ -58,9 +58,9 @@
                         <input type="hidden" value="@document.DocumentId" name="documentId" />
                         <input type="hidden" value="" name="documentContent" id="update-docContent-@i" />
                         <input type="hidden" name="originalNote" value="@document.DocumentNotes[i]" />
-                        <input type="textarea" class="border-none mb-1 mh-20 background-l-grey" value="@document.DocumentNotes[i]" name="updatedNote" />
+                        <input type="textarea" class="textarea border-none mb-1 mh-20 background-l-grey" value="@document.DocumentNotes[i]" name="updatedNote" />
                     </form>
-                    <div class="fancybutton h-40 update-note-submit" id="submit-@i">Update Note</div>
+                    <div class="fancybutton h-auto txt-a-center update-note-submit" id="submit-@i">Update Note</div>
                 </div>
             }
         @* } *@

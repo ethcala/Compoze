@@ -41,8 +41,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input type="submit" value="Update" class="fancybutton px-2 mt-2 mb-1" />
-                    <div class="fancybutton px-2 mx-5" onclick="openModal('del-modal')">Delete</div>
+                    <input type="submit" value="Update" class="fancybutton matchbuttons fixbtn" />
+                    <div class="fancybutton matchbuttons" onclick="openModal('del-modal')">Delete</div>
                 </div>
             </form>
         </div>
@@ -136,13 +136,13 @@
     <div class="modal-content">
         <span class="x-button close" onclick="closeModal('newdoc-modal')">X</span>
         <h3 class="border-bottom">New Document</h3>
-        <form class="border-none m-auto mt-2" method="post" asp-controller="UserInfo" asp-action="CreateDocument">
+        <form class="border-none m-auto mt-2 center-y" method="post" asp-controller="UserInfo" asp-action="CreateDocument">
             <input type="hidden" value="@project.ProjectId" name="projectId" />
             <input type="hidden" value="" name="category" id="docCategory" />
             <label for="docName" class="m-auto">Title: </label>
             <input type="text" name="docName" />
-            <label for="template" class="m-auto">Template: </label>
-            <select name="template" value="None" id="template" class="w-50">
+            <label for="template" class="m-auto mt-2">Template: </label>
+            <select name="template" value="None" id="template" class="w-50 mb-2">
                 <option value="None">None</option>
                 @foreach(Template t in templates)
                 {
