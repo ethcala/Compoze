@@ -1,0 +1,210 @@
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\appsettings.Development.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\appsettings.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\electron.manifest.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.staticwebassets.runtime.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.exe
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.deps.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.runtimeconfig.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\ElectronNET.API.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\EngineIoClientDotNet.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.Win32.SystemEvents.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Newtonsoft.Json.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\SocketIoClientDotNet.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\SuperSocket.ClientEngine.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\System.Drawing.Common.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\WebSocket4Net.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.AssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.RazorAssemblyInfo.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.RazorAssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\bundle\CompozeElectron.styles.css
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\projectbundle\CompozeElectron.bundle.scp.css
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.CopyComplete
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\refint\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.genruntimeconfig.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\obj\Debug\net6.0\win-x64\ref\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Auth0.AspNetCore.Authentication.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Logging.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\package-lock.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\package.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\dart.exe
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-x64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-arm64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\AspNetCore.SassCompiler.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\DnsClient.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Bson.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Driver.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Driver.Core.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Libmongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\SharpCompress.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\libzstd.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\snappy32.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\snappy64.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\mongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeData.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeData.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\appsettings.Development.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\appsettings.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\electron.manifest.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\package-lock.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\package.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\dart.exe
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-x64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-arm64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.staticwebassets.runtime.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.exe
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.deps.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.runtimeconfig.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\AspNetCore.SassCompiler.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Auth0.AspNetCore.Authentication.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\DnsClient.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\ElectronNET.API.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\EngineIoClientDotNet.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Logging.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.Win32.SystemEvents.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Bson.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Driver.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Driver.Core.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Libmongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Newtonsoft.Json.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\SharpCompress.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\SocketIoClientDotNet.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\SuperSocket.ClientEngine.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\System.Drawing.Common.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\WebSocket4Net.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\libzstd.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\snappy32.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\snappy64.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\mongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeData.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeData.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.AssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.RazorAssemblyInfo.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.RazorAssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\bundle\CompozeElectron.styles.css
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\projectbundle\CompozeElectron.bundle.scp.css
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.CopyComplete
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\refint\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.genruntimeconfig.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Debug\net6.0\win-x64\ref\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\appsettings.Development.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\appsettings.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\electron.manifest.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\package-lock.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\package.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\dart.exe
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\win-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-x64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\linux-arm64\sass
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-x64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\dart
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\runtimes\osx-arm64\src\sass.snapshot
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.staticwebassets.runtime.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.exe
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.deps.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.runtimeconfig.json
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\AspNetCore.SassCompiler.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Auth0.AspNetCore.Authentication.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\DnsClient.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\ElectronNET.API.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\EngineIoClientDotNet.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Logging.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Microsoft.Win32.SystemEvents.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Bson.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Driver.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Driver.Core.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\MongoDB.Libmongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\Newtonsoft.Json.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\SharpCompress.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\SocketIoClientDotNet.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\SuperSocket.ClientEngine.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\System.Drawing.Common.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\WebSocket4Net.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\libzstd.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\snappy32.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\snappy64.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\mongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeData.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\bin\Debug\net6.0\win-x64\CompozeData.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.AssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.RazorAssemblyInfo.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.RazorAssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\bundle\CompozeElectron.styles.css
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\scopedcss\projectbundle\CompozeElectron.bundle.scp.css
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.csproj.CopyComplete
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\refint\CompozeElectron.dll
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\CompozeElectron.genruntimeconfig.cache
+C:\Users\Chris\Documents\GitHub\Compoze\CompozeApp\CompozeElectron\obj\Debug\net6.0\win-x64\ref\CompozeElectron.dll

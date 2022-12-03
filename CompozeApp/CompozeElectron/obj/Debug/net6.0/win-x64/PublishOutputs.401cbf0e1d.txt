@@ -1,0 +1,12 @@
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\appsettings.Development.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\appsettings.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\electron.manifest.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\package-lock.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\package.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\CompozeElectron.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\libzstd.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\snappy32.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\snappy64.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\mongocrypt.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\CompozeData.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeElectron\obj\Host\bin\CompozeElectron.exe

@@ -1,0 +1,12 @@
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\bin\Release\net6.0\CompozeData.deps.json
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\bin\Release\net6.0\CompozeData.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\bin\Release\net6.0\CompozeData.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.csproj.AssemblyReference.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.AssemblyInfoInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.AssemblyInfo.cs
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\refint\CompozeData.dll
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\CompozeData.pdb
+C:\Users\Chris\Documents\GitHub\Compoze\Compoze App\CompozeData\obj\Release\net6.0\ref\CompozeData.dll

@@ -1,0 +1,40 @@
+body, html {
+    background-color: rgb(46, 46, 46);
+}
+
+form {
+    background-color: rgb(82, 82, 82);
+}
+
+header, footer, .fancybutton, .nav-dark {
+    background-color: rgb(70, 60, 120);
+}
+
+header {
+    border-bottom: rgb(70, 60, 120);
+}
+
+.background-l-grey {
+    background-color: rgb(82, 82, 82);
+}
+
+.background-lighter {
+    background-color: rgb(91, 91, 91);
+}
+
+h1,h2,h3,h4,h5,h6,p,a,label {
+    color: white;
+}
+
+.border-all
+{
+    border-color: white;
+}
+
+.modal-content {
+    background-color: rgb(27, 27, 27);
+}
+
+.text-editor, .textarea {
+    color: white;
+}

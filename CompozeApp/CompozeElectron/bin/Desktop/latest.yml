@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: CompozeElectron-Setup-1.0.0.exe
+    sha512: ODDkIkd5e57q7jnMXlP3qnMk+ivPxMb9yCnz7yVOY5n2Jp5y5wdwZ4xbn9G3pASba3HrNMv92pL3joHKQi3wdQ==
+    size: 93306243
+path: CompozeElectron-Setup-1.0.0.exe
+sha512: ODDkIkd5e57q7jnMXlP3qnMk+ivPxMb9yCnz7yVOY5n2Jp5y5wdwZ4xbn9G3pASba3HrNMv92pL3joHKQi3wdQ==
+releaseDate: '2022-12-01T22:38:39.343Z'
